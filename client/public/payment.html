@@ -1549,10 +1549,8 @@
             targetHeader.classList.toggle('active');
         }
 
-        // Appointment buttons now show a simple reminder to print receipt first
-        // No verification check needed - just show the alert
-            
-            // Check if returning from verification
+        // Check if returning from verification
+        document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('verified') === 'true') {
                 // Show success message
