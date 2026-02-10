@@ -1230,21 +1230,8 @@
         let selectedTime = null;
 
         function openScheduleCalendar() {
-            // Check if identity verification is complete
-            const isVerified = localStorage.getItem('identityVerified') === 'true';
-            
-            if (!isVerified) {
-                // Show verification required message
-                if (confirm('Identity verification is required before scheduling an appointment.\n\nWould you like to complete the verification process now?')) {
-                    window.location.href = '/verify.html?from=payment';
-                }
-                return;
-            }
-            
-            document.getElementById('calendarModal').classList.add('active');
-            document.getElementById('scheduleView').style.display = 'block';
-            document.getElementById('confirmationView').classList.remove('active');
-            initializeDatePicker();
+            // Show reminder to print receipt first
+            alert('📄 Important Reminder\n\nPlease print your payment receipt first before scheduling your signature analysis appointment.\n\nThe receipt contains important information you\'ll need for your appointment.');
         }
 
         function closeCalendar() {
@@ -1462,19 +1449,8 @@
             targetHeader.classList.toggle('active');
         }
 
-        // Check verification status and manage appointment buttons
-        window.addEventListener('DOMContentLoaded', function() {
-            const isVerified = localStorage.getItem('identityVerified') === 'true';
-            const appointmentButtons = document.querySelectorAll('button[onclick="openScheduleCalendar()"]');
-            
-            // If not verified, make appointment buttons trigger verification
-            if (!isVerified) {
-                appointmentButtons.forEach(button => {
-                    button.onclick = function() {
-                        window.location.href = '/verify.html';
-                    };
-                });
-            }
+        // Appointment buttons now show a simple reminder to print receipt first
+        // No verification check needed - just show the alert
             
             // Check if returning from verification
             const urlParams = new URLSearchParams(window.location.search);
