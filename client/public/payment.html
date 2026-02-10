@@ -727,7 +727,10 @@
 
                     <div class="wallet-address">
                         <strong>📋 Court's USDC Wallet Address:</strong><br>
-                        0x6a9f151c529479e825db7be983ae9c7736b23494<br><br>
+                        <div style="display: flex; align-items: center; gap: 10px; margin-top: 8px;">
+                            <code style="background: #f7fafc; padding: 8px 12px; border-radius: 6px; font-size: 13px; flex: 1;">0x6a9f151c529479e825db7be983ae9c7736b23494</code>
+                            <button onclick="copyToClipboard('0x6a9f151c529479e825db7be983ae9c7736b23494', this)" style="background: #667eea; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; white-space: nowrap;">📋 Copy</button>
+                        </div><br>
                         <img src="coinbase_qr.png" alt="Coinbase QR Code" style="width: 200px; height: 200px; border: 2px solid #e2e8f0; border-radius: 8px; margin-top: 10px;">
                     </div>
 
@@ -789,7 +792,7 @@
                                 <li>Click on USDC, then click "Send"</li>
                                 <li>You'll see a field that says "To" or "Recipient"</li>
                                 <li>Copy the court's wallet address above (use the copy button) and paste it here</li>
-                                <li>Double-check the address matches exactly: <strong>0x6a9f151c529479e825db7be983ae9c7736b23494</strong></li>
+                                 <li>Double-check the address matches exactly: <strong>0x6a9f151c529479e825db7be983ae9c7736b23494</strong> (or use the copy button above)</li>
                                 <li>Enter the amount of USDC to send (the full amount you purchased)</li>
                                 <li>Click "Continue" then "Send Now"</li>
                                 <li>Coinbase may ask you to verify with a code sent to your phone or email</li>
@@ -829,10 +832,28 @@
             <div class="payment-content" id="kiosk-content">
                 <div class="payment-details">
                     <div class="wallet-address">
-                        <strong>📍 Court's USDC Wallet Addresses:</strong><br>
-                        QR #1: 0x6a9f151c529479e825db7be983ae9c7736b23494<br>
-                        QR #2: 0xdcd4035f040490df514207950421ba0d4dd2f7b4<br>
-                        QR #3: 0x8C56EF6ba454a001424799BC492d07b39Db82b48
+                        <strong>📍 Court's USDC Wallet Addresses:</strong><br><br>
+                        <div style="margin-bottom: 12px;">
+                            <strong>QR #1:</strong><br>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-top: 6px;">
+                                <code style="background: #f7fafc; padding: 8px 12px; border-radius: 6px; font-size: 12px; flex: 1; word-break: break-all;">0x6a9f151c529479e825db7be983ae9c7736b23494</code>
+                                <button onclick="copyToClipboard('0x6a9f151c529479e825db7be983ae9c7736b23494', this)" style="background: #667eea; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; white-space: nowrap;">📋 Copy</button>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 12px;">
+                            <strong>QR #2:</strong><br>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-top: 6px;">
+                                <code style="background: #f7fafc; padding: 8px 12px; border-radius: 6px; font-size: 12px; flex: 1; word-break: break-all;">0xdcd4035f040490df514207950421ba0d4dd2f7b4</code>
+                                <button onclick="copyToClipboard('0xdcd4035f040490df514207950421ba0d4dd2f7b4', this)" style="background: #667eea; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; white-space: nowrap;">📋 Copy</button>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 12px;">
+                            <strong>QR #3:</strong><br>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-top: 6px;">
+                                <code style="background: #f7fafc; padding: 8px 12px; border-radius: 6px; font-size: 12px; flex: 1; word-break: break-all;">0x8C56EF6ba454a001424799BC492d07b39Db82b48</code>
+                                <button onclick="copyToClipboard('0x8C56EF6ba454a001424799BC492d07b39Db82b48', this)" style="background: #667eea; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; white-space: nowrap;">📋 Copy</button>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="warning-box">
@@ -1380,6 +1401,42 @@
             // Save PDF
             const dateStr = selectedDate.replace(/-/g, '');
             doc.save(`Appointment_Confirmation_${dateStr}.pdf`);
+        }
+
+        function copyToClipboard(text, button) {
+            // Use the Clipboard API to copy text
+            navigator.clipboard.writeText(text).then(function() {
+                // Change button text to show success
+                const originalText = button.innerHTML;
+                button.innerHTML = '✅ Copied!';
+                button.style.background = '#48bb78';
+                
+                // Reset button after 2 seconds
+                setTimeout(function() {
+                    button.innerHTML = originalText;
+                    button.style.background = '#667eea';
+                }, 2000);
+            }).catch(function(err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    button.innerHTML = '✅ Copied!';
+                    button.style.background = '#48bb78';
+                    setTimeout(function() {
+                        button.innerHTML = '📋 Copy';
+                        button.style.background = '#667eea';
+                    }, 2000);
+                } catch (err) {
+                    alert('Failed to copy. Please copy manually.');
+                }
+                document.body.removeChild(textArea);
+            });
         }
 
         function togglePayment(option) {
