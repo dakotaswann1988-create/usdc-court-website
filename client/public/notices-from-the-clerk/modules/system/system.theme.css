@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="https://www.cacd.uscourts.gov/sites/all/themes/us_courts_district/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
+<link rel="canonical" href="https://www.cacd.uscourts.gov/notices-from-the-clerk/modules/system/system.theme.css" />
+<link rel="shortlink" href="https://www.cacd.uscourts.gov/notices-from-the-clerk/modules/system/system.theme.css" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=EDGE" />
+  <title>Notices from the Clerk | Central District of California | United States District Court</title>
+  <link type="text/css" rel="stylesheet" href="https://www.cacd.uscourts.gov/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.cacd.uscourts.gov/sites/default/files/css/css_DRp4egbtvbXu6aLk8ghbCdAbtJX2C7E5bvawHsrQsd8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.cacd.uscourts.gov/sites/default/files/css/css_KpHsFsHL5G3x9EUJr5pMqQKsGs4fdCXEGrY6HhOgLHA.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="https://www.cacd.uscourts.gov/sites/default/files/css/css_L0TvgjLpbjkd7cXF6YIh4ekRxGXDWX48v1NtZqbNagE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.cacd.uscourts.gov/sites/default/files/css/css_o5Mcafk-MQRJY3nNUoTxn3aiJ_wmGRGK2ONHrg4dRKU.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Quattrocento" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.cacd.uscourts.gov/sites/default/files/css/css_8Ejh5wrc28tfdupCtzF1Pt_GMQ2wVykZ5GwzTPxa-6A.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.cacd.uscourts.gov/sites/default/files/css/css_yIN86qcSzgZBh09gvgsT6bNFdmxIjxaTRJazu_Bjgik.css" media="all" />
+
+<!--[if IE 6]>
+<link type="text/css" rel="stylesheet" href="https://www.cacd.uscourts.gov/sites/default/files/css/css_xEZgKAinbVy9u_4q6gRa1WgGkDos2WFBIjZfn0X_EJA.css" media="all" />
+<![endif]-->
+
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" href="https://www.cacd.uscourts.gov/sites/default/files/css/css_Jemn1qMcq5jnZLuoDpXduivhP2nZI9HlFeFgjDBIUuY.css" media="all" />
+<![endif]-->
+
+<!--[if IE 8]>
+<link type="text/css" rel="stylesheet" href="https://www.cacd.uscourts.gov/sites/default/files/css/css_KirjLOox98Aj07tVaC86yVjEwuwwD9CrW4xIKdm_Rxg.css" media="all" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="https://www.cacd.uscourts.gov/sites/default/files/css/css_5eC9dvx6uht0FRbFdqfCD9y_dmI5GVkZu2cUiYd7msE.css" media="all" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes,target-densityDpi=device-dpi"/>
+</head>
+<body class="html not-front not-logged-in two-sidebars page-notices-from-the-clerk page-notices-from-the-clerk-modules page-notices-from-the-clerk-modules-system page-notices-from-the-clerk-modules-system-systemthemecss defaultFont" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <!-- <div><marquee class="top-alert-bar" ><a href="https://www.cacd.uscourts.gov/news/coronavirus-covid-19-guidance">Coronavirus (COVID-19) Guidance</a></marquee></div> -->
+  <!-- <div><marquee class="top-alert-bar" >The Court will remain open during the government shutdown. Jurors should report for duty as instructed.</marquee></div> -->
+    <!-- top bar -->
+<div id="top-bar-wrapper">
+  <div id="top-bar" class="container_12 clearfix">
+    <div id="user-type-menu" class="prefix_1 grid_6 omega">
+        <div class="region region-user-type-menu">
+    <div id="block-menu-menu-user-type-menu" class="block block-menu">
+
+    
+  <div class="content">
+    <ul class="menu clearfix"><li class="first leaf"><a href="/jurors">Jurors</a></li>
+<li class="leaf"><a href="/attorneys">Attorneys</a></li>
+<li class="leaf"><a href="http://prose.cacd.uscourts.gov">People without Lawyers</a></li>
+<li class="last leaf"><a href="/newsworthy/media">Media</a></li>
+</ul>  </div>
+</div>
+  </div>
+    </div><!-- /user-type-menu -->
+
+    <div id="utility-links" class="grid_5 omega">
+        <div class="region region-utility-links">
+    <div id="block-us-courts-stock-font-resizer" class="block block-us-courts-stock text-resizer-block">
+
+    
+  <div class="content">
+    <div class="resizer-wrap clearfix">
+	<span>Text Size: </span>
+	<ul class="resizer">
+		<li class="decrease-font"><a href="#">Decrease font size</a></li>
+		<li class="reset-font"><a href="#">Reset font size</a></li>
+		<li class="increase-font"><a href="#">Increase font size</a></li>
+	</ul>
+</div>  </div>
+</div>
+  </div>
+    </div><!-- /utility-links -->
+  </div><!-- /top-bar -->
+</div><!-- /top-bar-wrapper -->
+
+<div id="page" class="container_12">
+  <div id="header" class="grid_12">
+    <!-- logo -->
+          <div id="logo" class="grid_2 alpha omega">
+        <a href="/" title="Home" rel="home">
+          <img src="https://www.cacd.uscourts.gov/https://files.manuscdn.com/user_upload_by_module/session_file/310519663319459186/EhIIjTBZezYPxsWZ.png" alt="Home" />
+          </a>
+      </div>
+      <!-- logo -->
+    
+    <!-- site-name-and-slogan -->
+          <div id="name-and-slogan" class="grid_6 alpha">
+        <span id="site-court"><a href="/" title="Home" rel="home">United States District Court</a></span>
+
+                              <span id="site-name">
+              <a href="/" title="Home" rel="home">Central District of California</a>
+            </span>
+
+                  
+
+                  <span id="site-slogan"><a href="/" title="Home" rel="home">Dolly M. Gee, Chief Judge<br>Brian D. Karth, District Court Executive/Clerk of Court</a></span>
+              </div>
+    
+    <!-- search box -->
+          <div id="search-box" class="grid_4 omega">
+          <div class="region region-search-box">
+    <div id="block-search-form" class="block block-search">
+
+    
+  <div class="content">
+    <form class="search-form" role="search" action="/notices-from-the-clerk/modules/system/system.theme.css" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+ <input class="custom-search-default-value custom-search-box form-text form-text" onfocus="if (this.value == &#039;Search this site&#039;) {this.value = &#039;&#039;;}" onblur="if (this.value == &#039;&#039;) {this.value = &#039;Search this site&#039;;}" type="text" id="edit-search-block-form--2" name="search_block_form" value="Search this site" size="15" maxlength="128" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-H3R9iE5Zf2yS0RTk6FoB5zOppcaTeCgrCYM7wuKVhis" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+</div>
+  </div>
+      </div><!-- /searchBox -->
+      </div><!-- /#header -->
+
+  <!-- navigation -->
+      <div id="navigation" class="grid_12">
+        <div class="region region-navigation">
+    <div id="block-menu-menu-mobile-menu" class="block block-menu">
+
+    
+  <div class="content">
+    <ul class="menu clearfix"><li class="first leaf"><a href="/jurors">Jurors</a></li>
+<li class="leaf"><a href="/attorneys">Attorneys</a></li>
+<li class="leaf"><a href="http://prose.cacd.uscourts.gov/">People without Lawyers</a></li>
+<li class="leaf"><a href="/clerk-services">Clerk Services</a></li>
+<li class="leaf"><a href="/e-filing">Electronic Filing</a></li>
+<li class="leaf"><a href="/judges-requirements">Judges&#039; Requirements</a></li>
+<li class="leaf"><a href="/calendars">Calendars</a></li>
+<li class="leaf"><a href="/interpreters">Accommodations</a></li>
+<li class="leaf"><a href="/court-procedures">Court Procedures</a></li>
+<li class="leaf"><a href="/newsworthy">Newsworthy</a></li>
+<li class="leaf"><a href="/locations">Court Locations</a></li>
+<li class="last leaf"><a href="/contact">Contact Us</a></li>
+</ul>  </div>
+</div>
+<div id="block-system-main-menu" class="block block-system block-menu">
+
+    
+  <div class="content">
+    <ul class="menu clearfix"><li class="first leaf"><a href="/" class="hide">Home</a></li>
+<li class="expanded"><a href="/clerk-services">Clerk Services</a><ul class="menu clearfix"><li class="first collapsed"><a href="/court-reporting-services">Court Reporting Services</a></li>
+<li class="collapsed"><a href="/clerk-services/courtroom-technology">Courtroom Technology</a></li>
+<li class="collapsed"><a href="/clerk-services/cvb">Central Violations Bureau - Federal Ticket</a></li>
+<li class="collapsed"><a href="/employment">Employment</a></li>
+<li class="leaf"><a href="/interpreters">Interpreter Services</a></li>
+<li class="collapsed"><a href="/clerk-services/naturalization-ceremony-information">Naturalization Ceremony Information</a></li>
+<li class="leaf"><a href="/clerk-services/policy-gratuities-and-gifts">Policy for Gratuities and Gifts</a></li>
+<li class="collapsed"><a href="/records">Records Department</a></li>
+<li class="last leaf"><a href="/clerk-services/policy-regarding-public-requests-use-district-court-facilities">Requests to Use District Court Facilities</a></li>
+</ul></li>
+<li class="expanded"><a href="/e-filing">E-Filing</a><ul class="menu clearfix"><li class="first expanded"><a href="/e-filing/nextgen-cmecf">NextGen CM/ECF</a><ul class="menu clearfix"><li class="first last leaf"><a href="/e-filing/link-your-cmecf-account-your-pacer-account">Link Your CM/ECF Account to Your PACER Account</a></li>
+</ul></li>
+<li class="leaf"><a href="/e-filing/electronic-filing-and-case-access-attorneys">Electronic Filing and Case Access for Attorneys</a></li>
+<li class="leaf"><a href="/e-filing/electronic-filing-and-case-access-people-without-lawyers">Electronic Filing and Case Access for People Without Lawyers</a></li>
+<li class="leaf"><a href="/e-filing/updating-your-contact-information">Updating Your Contact Information</a></li>
+<li class="leaf"><a href="/e-filing/cmecf-helpdesk">CM/ECF Helpdesk</a></li>
+<li class="leaf"><a href="/judges-schedules-procedures">Mandatory Chambers Copies</a></li>
+<li class="leaf"><a href="/e-filing/electronic-case-opening">Electronic Case Opening</a></li>
+<li class="leaf"><a href="/e-filing/initiating-documents">Initiating Documents</a></li>
+<li class="collapsed"><a href="/e-filing/sealed-documents">Sealed Documents</a></li>
+<li class="leaf"><a href="/e-filing/criminal-duty-matters">Criminal Duty Matters</a></li>
+<li class="leaf"><a href="/e-filing/exceptions-electronic-filing">Exceptions to Electronic Filing</a></li>
+<li class="leaf"><a href="/e-filing/proposed-documents">Proposed Documents</a></li>
+<li class="leaf"><a href="/e-filing/document-redaction-and-transcripts">Document Redaction and Transcripts</a></li>
+<li class="leaf"><a href="http://www.privacy.uscourts.gov/">Judiciary Privacy Policy</a></li>
+<li class="leaf"><a href="http://www.cacd.uscourts.gov/sites/default/files/documents/CMECFSearch.pdf">Electronic Filing Event Search</a></li>
+<li class="leaf"><a href="/e-filing/hardware-and-software-requirements-electronic-filing">Hardware and Software Requirements for Electronic Filing</a></li>
+<li class="leaf"><a href="/e-filing/cmecf-and-pacer-system-outage-logs">CM/ECF and PACER Outage Logs</a></li>
+<li class="leaf"><a href="https://www.cacd.uscourts.gov/videos">Other Training Videos</a></li>
+<li class="leaf"><a href="https://www.cacd.uscourts.gov/sites/default/files/documents/Hyperlinking_Attorneys_Word.pdf">Hyperlinking for Attorneys - Word</a></li>
+<li class="leaf"><a href="https://www.cacd.uscourts.gov/sites/default/files/documents/Hyperlinking_Attorneys_Wordperfect.pdf">Hyperlinking for Attorneys - WordPerfect</a></li>
+<li class="leaf"><a href="/e-filing/faqs">FAQs</a></li>
+<li class="leaf"><a href="/e-filing/pacer-mfa-faqs">PACER MFA FAQs</a></li>
+<li class="last leaf"><a href="/e-filing/pdfs-created-on-mac">Problem with PDF documents created on Mac Operating Systems</a></li>
+</ul></li>
+<li class="expanded"><a href="/judges-requirements">Judges&#039; Requirements</a><ul class="menu clearfix"><li class="first leaf"><a href="/judges-schedules-procedures">Judges&#039; Procedures and Schedules</a></li>
+<li class="collapsed"><a href="/judges-requirements/court-programs">Court Programs</a></li>
+<li class="leaf"><a href="/judges-requirements/judicial-conduct-and-disability">Judicial Conduct and Disability</a></li>
+<li class="last leaf"><a href="/judges-requirements/judicial-seminar-disclosure">Judicial Seminar Disclosure</a></li>
+</ul></li>
+<li class="expanded"><a href="/calendars">Calendars</a><ul class="menu clearfix"><li class="first leaf"><a href="/clerk-services/court-holidays">Court Holidays</a></li>
+<li class="leaf"><a href="/daily-calendar">Daily Calendar</a></li>
+<li class="leaf"><a href="https://apps.cacd.uscourts.gov/calpub/">Criminal Duty Calendar</a></li>
+<li class="leaf"><a href="/calendars/motion-calendars">Motion Calendar</a></li>
+<li class="last leaf"><a href="https://www.cacd.uscourts.gov/calendars/eroster">Magistrate Judge Criminal Duty Roster</a></li>
+</ul></li>
+<li class="expanded"><a href="/accommodations">Accommodations</a><ul class="menu clearfix"><li class="first collapsed"><a href="/accommodations/americans-disabilities-act">Americans with Disabilities Act</a></li>
+<li class="last collapsed"><a href="/interpreters">Interpreter Services</a></li>
+</ul></li>
+<li class="expanded"><a href="/court-procedures">Court Procedures</a><ul class="menu clearfix"><li class="first collapsed"><a href="/court-procedures/filing-procedures">Filing Procedures</a></li>
+<li class="leaf"><a href="/court-procedures/forms">Forms</a></li>
+<li class="leaf"><a href="/court-procedures/general-orders">General Orders</a></li>
+<li class="last leaf"><a href="/court-procedures/local-rules">Local Rules</a></li>
+</ul></li>
+<li class="expanded"><a href="/newsworthy">Newsworthy</a><ul class="menu clearfix"><li class="first collapsed"><a href="/newsworthy/cases-of-interest">Cases of Interest</a></li>
+<li class="collapsed"><a href="/newsworthy/community-outreach/community-outreach">Community Outreach</a></li>
+<li class="collapsed"><a href="/newsworthy/historical-decades">Historical Decades</a></li>
+<li class="last collapsed"><a href="/newsworthy/media">Media</a></li>
+</ul></li>
+<li class="expanded"><a href="/judges-schedules-procedures">Hearing Access</a><ul class="menu clearfix"><li class="first leaf"><a href="/judges-schedules-procedures">Zoom Webinar Information by Judge</a></li>
+<li class="last leaf"><a href="/clerk-services/courtroom-technology/zoom-courtroom-proceedings">Guidelines for Zoom Courtroom Proceedings</a></li>
+</ul></li>
+<li class="last leaf"><a href="/contact">Contact Us</a></li>
+</ul>  </div>
+</div>
+  </div>
+    </div><!-- /navigation -->
+  
+  <!-- content-wrapper -->
+  <div id="content-wrapper" class="grid_12">
+    <div id="main" class="clearfix">
+
+      <!-- start of main content area -->
+      <div id="content" class="grid_6 push_3">
+                  <div id="breadcrumb"><h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a></div></div>
+        
+        
+                <a id="main-content"></a>
+                <h1 class="title" id="page-title">Notices from the Clerk</h1>                <div class="tabs"></div>                        
+        <!-- main content -->
+          <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div class="view view-news view-id-news view-display-id-page_1 view-dom-id-503986094128c70e29f1e13ffbb3ab4b">
+            <div class="view-header">
+      <p>Check this page, or the News and Announcements box on the homepage, for the latest official news and announcements released by the court. You can also access archived news and announcements from this page.</p>
+    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row-odd views-row-first">
+      
+          <a href="/news/martin-luther-king-jr-day"><h4>Martin Luther King Jr. Day</h4></a>    
+          On Monday, January 19, 2026, the United States District Court, including the Probation and Pretrial Services Office, in the Western, Eastern, and Southern Divisions, will be closed in recognition of Martin Luther King Jr.’s birthday. 
+Normal service...    </div>
+  <div class="views-row-even">
+      
+          <a href="/news/updated-holiday-schedule"><h4> Updated Holiday Schedule</h4></a>    
+          Due to the extreme storm warnings and possible flooding on Wednesday, December 24, 2025, the Clerk’s Office in Los Angeles, Santa Ana and Riverside will be available on a limited basis only.  For emergency filings only, please contact the Intake...    </div>
+  <div class="views-row-odd">
+      
+          <a href="/news/holiday-schedule-5"><h4>Holiday Schedule</h4></a>    
+          On Thursday, December 25, 2025, the United States District Court, including the Probation and Pretrial Services Office, in the Western, Eastern, and Southern Divisions, will be closed in recognition of the Christmas holiday.
+Regular service will...    </div>
+  <div class="views-row-even">
+      
+          <a href="/news/thanksgiving-day-2"><h4>Thanksgiving Day</h4></a>    
+          On Thursday, November 27, 2025, and Friday, November 28, 2025, the United States District Court, including the Probation and Pretrial Services Office, in the Western, Eastern, and Southern Divisions, will be closed in observance of the Thanksgiving...    </div>
+  <div class="views-row-odd">
+      
+          <a href="/news/changes-local-rules-proposed-become-effective-december-1-2025"><h4>Changes to Local Rules Proposed to Become Effective December 1, 2025</h4></a>    
+          The Court preliminarily has approved amendments and an addition to the local rules listed below.  The proposed effective date is December 1, 2025.  A redline of the proposed changes accompanies the electronic version of this notice and can also be...    </div>
+  <div class="views-row-even">
+      
+          <a href="/news/implementation-sealed-document-security-sds-program"><h4>Implementation of the Sealed Document Security (SDS) Program</h4></a>    
+          The Sealed Document Security (SDS) program has been initiated by the Administrative Office to address security vulnerabilities of CM/ECF and is being implemented in all District, Appellate, and Bankruptcy Courts.  Due to security reasons and the...    </div>
+  <div class="views-row-odd">
+      
+          <a href="/news/seeking-applications-attorney-merit-selection-panel-members"><h4>Seeking Applications: Attorney Merit Selection Panel Members</h4></a>    
+          The United States District Court, Central District of California, is currently accepting applications from qualified attorneys interested in serving on the Central District of California’s Magistrate Judge Merit Selection Panel.  This recruitment...    </div>
+  <div class="views-row-even">
+      
+          <a href="/news/public-notice-intent-consider-reappointment-united-states-magistrate-judge-autumn-d-spaeth"><h4>Public Notice of Intent to Consider the Reappointment of United States Magistrate Judge Autumn D. Spaeth</h4></a>    
+          Notice is hereby given that a panel of citizens has been established to submit a recommendation to the Court regarding the matter of the reappointment of Autumn D. Spaeth to an additional eight (8) year term. Magistrate Judge Spaeth’s term expires...    </div>
+  <div class="views-row-odd">
+      
+          <a href="/news/customer-service-windows-closed-september-4-2025-1200-200-pm"><h4>Customer Service Windows Closed on September 4, 2025 from 12:00-2:00 p.m.</h4></a>    
+          On Thursday, September 4, 2025, the Customer Service Window at the First Street Courthouse as well as the Jury, Intake, Records and Fiscal Departments in all three divisions of the Central District of California will be closed from 12:00 p.m. to 2:...    </div>
+  <div class="views-row-even">
+      
+          <a href="/news/reduction-cmecf-helpdesk-hours"><h4>Reduction of CM/ECF Helpdesk Hours</h4></a>    
+          Please be advised that starting on September 2, 2025, the CM/ECF Helpdesk’s operating hours will be reduced to 10:00 a.m. until 12:00 p.m. and 2:00 p.m. until 4:00 p.m., Monday through Friday, excluding weekends and federal holidays. These times...    </div>
+  <div class="views-row-odd">
+      
+          <a href="/news/changes-local-rules-proposed-become-effective-june-1-2025"><h4>Changes to Local Rules Proposed to Become Effective June 1, 2025</h4></a>    
+          The Court preliminarily has approved amendments and an addition to the local rules listed below.  The proposed effective date is June 1, 2025.  A redline of the proposed changes accompanies the electronic version of this notice and can also be found...    </div>
+  <div class="views-row-even">
+      
+          <a href="/news/recruitment-notice-criminal-justice-act-cja-trial-attorney-panel-4"><h4>Recruitment Notice for Criminal Justice Act (CJA) Trial Attorney Panel</h4></a>    
+          The Criminal Justice Act Trial Attorney Panel    </div>
+  <div class="views-row-odd">
+      
+          <a href="/news/recruitment-notice-ninth-circuit-judicial-conference-lawyer-representatives-1"><h4>Recruitment Notice for Ninth Circuit Judicial Conference Lawyer Representatives</h4></a>    
+          The United States District Court, Central District of California, is currently accepting applications from qualified individuals interested in serving as Ninth Circuit Judicial Conference Lawyer Representatives.  The selected Lawyer Representatives...    </div>
+  <div class="views-row-even">
+      
+          <a href="/news/central-district-california-will-launch-opt-out-civil-consent-magistrate-judges-program-0"><h4>The Central District of California Will Launch Opt-Out Civil Consent to Magistrate Judges Program on December 1, 2024 </h4></a>    
+          The Central District of California will launch the Opt-Out Civil Consent to Magistrate Judges Program on December 1, 2024.  Pursuant to that Program, a certain portion of new civil filings will be assigned directly to Magistrate Judges.  The parties...    </div>
+  <div class="views-row-odd">
+      
+          <a href="/news/changes-local-rules-proposed-become-effective-december-1-2024"><h4>Changes to Local Rules Proposed to Become Effective December 1, 2024</h4></a>    
+              </div>
+  <div class="views-row-even">
+      
+          <a href="/news/public-notice-intent-consider-reappointment-united-states-magistrate-judge-john-d-early"><h4>Public Notice of Intent to Consider the Reappointment of United States Magistrate Judge John D. Early </h4></a>    
+          Notice is hereby given that a panel of citizens has been established to submit a recommendation to the Court regarding the matter of the reappointment of John D. Early to an additional eight (8) year term. Magistrate Judge Early’s term expires...    </div>
+  <div class="views-row-odd">
+      
+          <a href="/news/reminder-requirement-maintain-updated-contact-information-cmecf"><h4>Reminder: Requirement to Maintain Updated Contact Information in CM/ECF</h4></a>    
+              </div>
+  <div class="views-row-even">
+      
+          <a href="/news/additional-changes-local-rules-proposed-become-effective-june-1-2024"><h4>Additional Changes to Local Rules Proposed to Become Effective June 1, 2024</h4></a>    
+          In February 2024, a Notice from the Clerk issued regarding amendments to the local rules proposed to be effective on June 1, 2024.  Since then, the Court has approved another amendment and an addition to the local rules listed below, proposed to be...    </div>
+  <div class="views-row-odd">
+      
+          <a href="/news/changes-local-rules-proposed-become-effective-june-1-2024"><h4>Changes to Local Rules Proposed to Become Effective June 1, 2024</h4></a>    
+          The Court preliminarily has approved amendments to the local rules listed below.  The proposed effective date is June 1, 2024.  A redline of the proposed changes accompanies the electronic version of this notice and can also be found on the Court’s...    </div>
+  <div class="views-row-even views-row-last">
+      
+          <a href="/news/changes-district-court-miscellaneous-fee-schedule-1"><h4>Changes to the District Court Miscellaneous Fee Schedule</h4></a>    
+          Pursuant to 28 U.S.C. § 1914, the Judicial Conference of the United States approved several changes to the district court miscellaneous fee schedule, effective December 1, 2023.  The amended Schedule of Fees will be available on the Court’s website.    </div>
+    </div>
+  
+      <h2 class="element-invisible">Pages</h2><div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a title="Go to page 2" href="/notices-from-the-clerk/modules/system/system.theme.css?page=1">2</a></li>
+<li class="pager-item"><a title="Go to page 3" href="/notices-from-the-clerk/modules/system/system.theme.css?page=2">3</a></li>
+<li class="pager-item"><a title="Go to page 4" href="/notices-from-the-clerk/modules/system/system.theme.css?page=3">4</a></li>
+<li class="pager-item"><a title="Go to page 5" href="/notices-from-the-clerk/modules/system/system.theme.css?page=4">5</a></li>
+<li class="pager-item"><a title="Go to page 6" href="/notices-from-the-clerk/modules/system/system.theme.css?page=5">6</a></li>
+<li class="pager-item"><a title="Go to page 7" href="/notices-from-the-clerk/modules/system/system.theme.css?page=6">7</a></li>
+<li class="pager-item"><a title="Go to page 8" href="/notices-from-the-clerk/modules/system/system.theme.css?page=7">8</a></li>
+<li class="pager-item"><a title="Go to page 9" href="/notices-from-the-clerk/modules/system/system.theme.css?page=8">9</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-next"><a title="Go to next page" href="/notices-from-the-clerk/modules/system/system.theme.css?page=1">next ›</a></li>
+<li class="pager-last last"><a title="Go to last page" href="/notices-from-the-clerk/modules/system/system.theme.css?page=10">last »</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+
+        
+              </div><!-- /#middle-content -->
+
+
+
+      <!-- start of first sidebar -->
+              <div id="sidebar-first" class="grid_3 pull_6">
+            <div class="region region-sidebar-first">
+    <div id="block-menu-block-3" class="block block-menu-block">
+
+    <h2>Clerk Services</h2>
+  
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-3 menu-name-main-menu parent-mlid-1297 menu-level-1">
+  <ul class="menu clearfix"><li class="first collapsed menu-mlid-1576"><a href="/court-reporting-services">Court Reporting Services</a></li>
+<li class="collapsed menu-mlid-2250"><a href="/clerk-services/courtroom-technology">Courtroom Technology</a></li>
+<li class="collapsed menu-mlid-3211"><a href="/clerk-services/cvb">Central Violations Bureau - Federal Ticket</a></li>
+<li class="collapsed menu-mlid-1475"><a href="/employment">Employment</a></li>
+<li class="leaf menu-mlid-1917"><a href="/interpreters">Interpreter Services</a></li>
+<li class="collapsed menu-mlid-1739"><a href="/clerk-services/naturalization-ceremony-information">Naturalization Ceremony Information</a></li>
+<li class="leaf menu-mlid-3064"><a href="/clerk-services/policy-gratuities-and-gifts">Policy for Gratuities and Gifts</a></li>
+<li class="collapsed menu-mlid-1695"><a href="/records">Records Department</a></li>
+<li class="last leaf menu-mlid-3385"><a href="/clerk-services/policy-regarding-public-requests-use-district-court-facilities">Requests to Use District Court Facilities</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+        </div><!-- /#sidebar-first -->
+      
+      <!-- start of second sidebar -->
+              <div id="sidebar-second" class="grid_3">
+            <div class="region region-sidebar-second">
+    <div id="block-views-news-block-4" class="block block-views">
+
+    <h2>Newsroom</h2>
+  
+  <div class="content">
+    <div class="view view-news view-id-news view-display-id-block_4 fp-news-feed view-dom-id-83f4b757fc00c6b2626d2be12d3af6cc">
+        
+  
+  
+      <div class="view-content">
+        <div>
+      
+          <a href="/news/angela-c-c-viramontes-appointed-united-states-magistrate-judge-central-district-california">Angela C. C. Viramontes Appointed as United States Magistrate Judge for the Central District of California</a>    </div>
+  <div>
+      
+          <a href="/news/daniel-s-roberts-appointed-united-states-magistrate-judge-central-district-california">Daniel S. Roberts Appointed as United States Magistrate Judge for the Central District of California</a>    </div>
+    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <p><a href="/news">Read more <i class="fa fa-caret-right"></i></a></p>
+    </div>
+  
+  
+</div>  </div>
+</div>
+  </div>
+        </div><!-- /#sidebar-second -->
+          </div><!-- /#main -->
+  </div><!-- /#content-wrapper -->
+
+  <div id="footer" class="grid_12">
+    
+          <div class="grid_3 first-block">
+          <div class="region region-footer-first">
+    <div id="block-menu-block-3--2" class="block block-menu-block">
+
+    <h2>Clerk Services</h2>
+  
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-3 menu-name-main-menu parent-mlid-1297 menu-level-1">
+  <ul class="menu clearfix"><li class="first collapsed menu-mlid-1576"><a href="/court-reporting-services">Court Reporting Services</a></li>
+<li class="collapsed menu-mlid-2250"><a href="/clerk-services/courtroom-technology">Courtroom Technology</a></li>
+<li class="collapsed menu-mlid-3211"><a href="/clerk-services/cvb">Central Violations Bureau - Federal Ticket</a></li>
+<li class="collapsed menu-mlid-1475"><a href="/employment">Employment</a></li>
+<li class="leaf menu-mlid-1917"><a href="/interpreters">Interpreter Services</a></li>
+<li class="collapsed menu-mlid-1739"><a href="/clerk-services/naturalization-ceremony-information">Naturalization Ceremony Information</a></li>
+<li class="leaf menu-mlid-3064"><a href="/clerk-services/policy-gratuities-and-gifts">Policy for Gratuities and Gifts</a></li>
+<li class="collapsed menu-mlid-1695"><a href="/records">Records Department</a></li>
+<li class="last leaf menu-mlid-3385"><a href="/clerk-services/policy-regarding-public-requests-use-district-court-facilities">Requests to Use District Court Facilities</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+      </div><!-- /.first-block -->
+    
+          <div class="grid_3">
+          <div class="region region-footer-second">
+    <div id="block-menu-block-1" class="block block-menu-block">
+
+    <h2>Jurors Information</h2>
+  
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-1477 menu-level-1">
+  <ul class="menu clearfix"><li class="first leaf menu-mlid-1479"><a href="/jurors/jurisdiction">Jurisdiction</a></li>
+<li class="leaf menu-mlid-1518"><a href="/jurors/petit-jury-terms-service">Petit Jury - Terms of Service</a></li>
+<li class="leaf menu-mlid-3046"><a href="/jurors/grand-jury-terms-service">Grand Jury Terms of Service</a></li>
+<li class="leaf menu-mlid-1524"><a href="/jurors/requesting-excuse">Requesting an Excuse</a></li>
+<li class="leaf menu-mlid-1523"><a href="/jurors/requesting-postponement">Requesting a Postponement</a></li>
+<li class="leaf menu-mlid-1519"><a href="/jurors/students">Students</a></li>
+<li class="leaf menu-mlid-1521"><a href="/jurors/payment">Payment</a></li>
+<li class="leaf menu-mlid-1522"><a href="/jurors/juror-amenities">Juror Amenities</a></li>
+<li class="leaf menu-mlid-1480"><a href="/jurors/jurors-dress-code">Dress Code</a></li>
+<li class="leaf menu-mlid-1481"><a href="/jurors/security">Security</a></li>
+<li class="leaf menu-mlid-1520"><a href="/jurors/employer-information">Employer Information</a></li>
+<li class="leaf menu-mlid-1527"><a href="https://ejuror1.uscourts.gov/ejuror-cacd/TransportRoom?servlet=login">Certificate of Jury Service</a></li>
+<li class="leaf menu-mlid-1528"><a href="/jurors/contact">Contact Us</a></li>
+<li class="leaf menu-mlid-1702"><a href="/jurors/parking-directions">Parking / Directions</a></li>
+<li class="last leaf menu-mlid-1703"><a href="/jurors/subsistence-information-hotels">Subsistence Information / Hotels</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+      </div><!-- /.first-block -->
+    
+          <div class="grid_3">
+          <div class="region region-footer-third">
+    <div id="block-menu-block-2" class="block block-menu-block">
+
+    <h2>Attorney Information</h2>
+  
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-498 menu-level-1">
+  <ul class="menu clearfix"><li class="first collapsed menu-mlid-1533"><a href="/attorneys/adr">Alternative Dispute Resolution (ADR)</a></li>
+<li class="expanded menu-mlid-1552"><a href="/attorneys/admissions">Attorney Admissions</a><ul class="menu clearfix"><li class="first leaf menu-mlid-1556"><a href="/attorneys/admissions/attorney-admissions-search">Attorney Admissions Search</a></li>
+<li class="last leaf menu-mlid-1554"><a href="/attorneys/admissions/civility-and-professionalism-guidelines">Civility and Professionalism Guidelines</a></li>
+</ul></li>
+<li class="leaf menu-mlid-3508"><a href="/attorneys/annual-bar-membership-renewal-fee">Annual Bar Membership Renewal Fee</a></li>
+<li class="collapsed menu-mlid-1558"><a href="/attorneys/assistance">Attorney Assistance</a></li>
+<li class="collapsed menu-mlid-3371"><a href="/attorneys/attorney-certificates/instructions-requesting-attorney-certificates">Attorney Certificates</a></li>
+<li class="leaf menu-mlid-3489"><a href="/attorneys/attorney-discipline">Attorney Discipline</a></li>
+<li class="collapsed menu-mlid-1529"><a href="/attorneys/capital-habeas">Capital Habeas</a></li>
+<li class="collapsed menu-mlid-1562"><a href="/attorneys/cja">Criminal Justice Act (CJA)</a></li>
+<li class="leaf menu-mlid-1910"><a href="/judges-requirements/court-programs/direct-assignment-civil-cases-magistrate-judges">Direct Assignment of Civil Cases to Magistrate Judges</a></li>
+<li class="collapsed menu-mlid-1687"><a href="/attorneys/lawyer-representatives">Lawyer Representatives</a></li>
+<li class="leaf menu-mlid-3386"><a href="https://www.cacd.uscourts.gov/sites/default/files/documents/Application%20For%20Merit%20Selection%20Panel.pdf">Merit Selection Panel Application</a></li>
+<li class="leaf menu-mlid-1555"><a href="/attorneys/mileage-rates">Mileage Rates</a></li>
+<li class="leaf menu-mlid-1832"><a href="/attorneys/post-judgment-interest-rates">Post-Judgment Interest Rates</a></li>
+<li class="expanded menu-mlid-1666"><a href="/attorneys/pro-bono">Pro Bono</a><ul class="menu clearfix"><li class="first leaf menu-mlid-1870"><a href="/attorneys/pro-bono">Pro Bono Civil Rights Panel</a></li>
+<li class="leaf menu-mlid-3209"><a href="/attorneys/pro-bono/pro-bono-limited-scope-representation-pilot-program">Pro Bono Limited-Scope Representation Pilot Program</a></li>
+<li class="leaf menu-mlid-1670"><a href="https://www.cacd.uscourts.gov/sites/default/files/documents/Pro_Bono_Application_2014.pdf">Pro Bono Application</a></li>
+<li class="leaf menu-mlid-1669"><a href="/attorneys/pro-bono/procedures-recovering-out-pocket-expenses">Procedures for Recovering Out-of-Pocket Expenses</a></li>
+<li class="leaf menu-mlid-1663"><a href="/attorneys/pro-bono/policy-reimbursement-out-pocket-expenses-incurred-court-appointed-pro-bono">Policy for Reimbursement of Out-of-Pocket Expenses Incurred by Court-Appointed Pro Bono Counsel</a></li>
+<li class="last leaf has-children menu-mlid-3482"><a href="/attorneys/pro-bono/honor-roll-volunteer-2023">Honor Roll of Volunteer Attorneys</a></li>
+</ul></li>
+<li class="last leaf menu-mlid-3521"><a href="/judges-requirements/court-programs/voluntary-consent-magistrate-judges">Voluntary Consent to Magistrate Judges</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+      </div><!-- /.first-block -->
+    
+          <div class="grid_3">
+          <div class="region region-footer-fourth">
+    <div id="block-menu-block-13" class="block block-menu-block">
+
+    <h2>Court Procedures</h2>
+  
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-13 menu-name-main-menu parent-mlid-1306 menu-level-1">
+  <ul class="menu clearfix"><li class="first collapsed menu-mlid-3074"><a href="/court-procedures/filing-procedures">Filing Procedures</a></li>
+<li class="leaf menu-mlid-3536"><a href="/court-procedures/forms">Forms</a></li>
+<li class="leaf menu-mlid-3052"><a href="/court-procedures/general-orders">General Orders</a></li>
+<li class="last leaf menu-mlid-1683"><a href="/court-procedures/local-rules">Local Rules</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+      </div><!-- /.first-block -->
+    
+      </div> <!-- /#footer -->
+</div><!-- /#page -->
+    <script type="text/javascript" src="https://www.cacd.uscourts.gov/sites/default/files/js/js_yMSKTzBO0KmozyLwajzFOrrt_kto_9mtccAkb0rm7gc.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+Drupal.settings.ais = [{"name":"threshold-480","size":480},{"name":"threshold-768","size":768},{"name":"threshold-992","size":992},{"name":"threshold-1382","size":1382}];
+Drupal.settings.ais_method = "both-max";
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.cacd.uscourts.gov/sites/default/files/js/js_EJca-M2EcnfPWqXlFDvdXeXf2sggqfR3FDy4Pefc0K0.js"></script>
+<script type="text/javascript" src="https://www.cacd.uscourts.gov/sites/default/files/js/js_cIR9zlJjxkAfR-s-3elLWSjyh4M5yqo_QGmjdKlQQmo.js"></script>
+<script type="text/javascript" src="https://www.cacd.uscourts.gov/sites/default/files/js/js_1ikcEtbOA2RdXAyb3C5sREB3qvGnjh1BPrmyq0xtIx0.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"us_courts_district","theme_token":"hyMdHjFeFhHL-jqMQyWE2SW_nVM-4moUq3K-5mxxooY","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"0":1,"sites\/all\/modules\/contrib\/extlink\/extlink.js":1,"ais\/assets\/js\/ais.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/custom_search\/js\/custom_search.js":1,"sites\/all\/modules\/contrib\/hide_submit\/hide_submit.js":1,"sites\/all\/themes\/oho_basic\/js\/lib.js":1,"sites\/all\/themes\/us_courts_district\/js\/scripts.js":1,"sites\/all\/themes\/us_courts_district\/js\/jquery.cookie.js":1,"sites\/all\/themes\/us_courts_district\/js\/ios-orientationchange-fix.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/ais\/assets\/css\/ais.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/flexslider\/assets\/css\/flexslider_img.css":1,"sites\/all\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/workflow\/workflow_admin_ui\/workflow_admin_ui.css":1,"sites\/all\/modules\/contrib\/extlink\/extlink.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/custom_search\/custom_search.css":1,"\/\/fonts.googleapis.com\/css?family=Quattrocento":1,"sites\/all\/themes\/us_courts_district\/fontawesome\/css\/font-awesome.css":1,"sites\/all\/modules\/contrib\/hide_submit\/hide_submit.css":1,"sites\/all\/themes\/oho_basic\/css\/lib.css":1,"sites\/all\/themes\/oho_basic\/css\/grid.css":1,"sites\/all\/themes\/us_courts_district\/css\/main.css":1,"sites\/all\/themes\/us_courts_district\/css\/visual-editor.css":1,"sites\/all\/themes\/us_courts_district\/css\/custom.css":1,"sites\/all\/themes\/us_courts_district\/css\/font-awesome.min.css":1,"sites\/all\/themes\/us_courts_district\/css\/ie6.css":1,"sites\/all\/themes\/us_courts_district\/css\/ie7.css":1,"sites\/all\/themes\/us_courts_district\/css\/ie8.css":1,"public:\/\/css_injector\/css_injector_1.css":1,"public:\/\/css_injector\/css_injector_3.css":1,"public:\/\/css_injector\/css_injector_5.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"custom_search":{"form_target":"_self","solr":1},"hide_submit":{"hide_submit_status":true,"hide_submit_method":"disable","hide_submit_css":"hide-submit-disable","hide_submit_abtext":"","hide_submit_atext":"Processing...","hide_submit_hide_css":"hide-submit-processing","hide_submit_hide_text":"Processing...","hide_submit_hide_fx":0,"hide_submit_reset_time":5000},"extlink":{"extTarget":0,"extClass":"ext","extLabel":"(link is external)","extImgClass":0,"extSubdomains":1,"extExclude":".*\\.gov","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":"_blank","extAlertText":"You are now leaving the website of the Central District of California. Clicking \u201cOK\u201d will direct you to a website created and maintained by a different organization. The Central District of California does not control or guarantee the accuracy, relevance, timeliness, or completeness of this outside information; nor does it control or guarantee the ongoing availability, maintenance, or security of the Internet site you are about to access. The inclusion of links to websites operated by other organizations is not intended to reflect their importance or to endorse any views expressed, or products or services offered, on these outside sites, or the organizations sponsoring the sites.\r\nClick \u201cOK\u201d to continue or \u201cCancel\u201d to stay on this site.","mailtoClass":"mailto","mailtoLabel":"(link sends e-mail)"},"urlIsAjaxTrusted":{"\/notices-from-the-clerk\/modules\/system\/system.theme.css":true}});
+//--><!]]>
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+﻿.webform-client-form textarea {
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    color: #555555;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 9px;
+    padding: 4px;
+    width: 90%;
+}
+
+.tablesorter .tablesorter-filter-row .disabled {
+    display: none;
+}
+
+select.search {
+    display: block;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    color: #555555;
+    display: inline-block;
+    font-size: 13px;
+    height: 28px;
+    line-height: 28px;
+    margin-bottom: 9px;
+    padding: 4px;
+    width: 90%;
+}
+
+h3 #search-key-wait {
+    font-size: 2rem;
+    margin: 4px 0px;
+    font-weight: bold;
+    color: #A01E21;
+}
+
+#result-table {
+    font-size: 1.0em;
+    line-height: 1.0em;
+    color: #333;
+    font-weight: normal;
+}
+#profile-table tr td:first-child {
+    font-weight: bold;
+    text-align: right;
+}
+ul.pagination {
+    list-style-type: none;
+    display: inline-block;
+    margin: 20px 0;
+    border-radius: 4px;
+    width: 100%;
+}
+
+ul.pagination li {
+    /*float: left;*/
+    display: inline;
+    cursor: pointer;
+}
+
+ul.pagination > li:first-child > a, ul.pagination > li:first-child > span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+ul.pagination > li > a, ul.pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #A01E21;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+ul.pagination li a.active {
+    background-color: #A01E21;
+    color: #fff;
+}
+
+ul.pagination li a.disabled {
+    color: lightgray;
+    cursor: default;
+}
+
+.search-criteria-w300 {
+    float: left;
+    width: 300px;
+}
+
+.search-criteria {
+    float: left;
+}
+.w300 {
+    width: 300px;
+}
+.w200 {
+    width: 200px;
+}
+clear-left {
+    clear: left;
+}
+
+.search-criteria-clear {
+    clear: left;
+}
+
+.ts-pager a:focus {
+    outline-style: none;
+}
+
+#result-table th:focus {
+    outline-style: none;
+}

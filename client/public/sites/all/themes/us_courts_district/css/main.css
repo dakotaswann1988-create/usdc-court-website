@@ -1,0 +1,1003 @@
+/* @group General */
+
+.messages {
+ clear: both;
+}
+
+/* Resizer */
+/*#block-block-3,*/
+.text-resizer-block {
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  right: 0px;
+  width: 160px;
+}
+.resizer-wrap {
+  background: url(../imgs/bg-header-resize.png) top left repeat-x;
+  display: block;
+  text-align: center;
+  padding-top: 7px;
+  padding-left: 10px;
+  height: 32px;
+}
+.resizer-wrap span {
+  float: left;
+  display: block;
+  padding-right: 15px;
+  font-size: 12px;
+  color: #FFF;
+}
+ul.resizer {
+  padding: 0;
+  margin: 0;
+  margin-left: 67px;
+}
+ul.resizer li {
+  list-style-type: none;
+  float: left;
+  padding-right: 5px;
+}
+ul.resizer li a {
+  display: block;
+  width: 21px;
+  height: 22px;
+  text-indent: -999em;
+  outline:none;
+}
+ul.resizer li a:link,
+ul.resizer li a:visited {
+  color: #FFF;
+}
+ul.resizer li.decrease-font a {
+  background: url(../imgs/btn-header-resize-sm.png) top left no-repeat;
+}
+ul.resizer li.reset-font a {
+  background: url(../imgs/btn-header-resize-med.png) top left no-repeat;
+}
+ul.resizer li.increase-font a {
+  background: url(../imgs/btn-header-resize-lg.png) top left no-repeat;
+}
+/* Header: Help */
+/*#block-block-4 {
+  position: absolute;
+  z-index: 300;
+  top: 5px;
+  right: 0;
+}*/
+.header-help {
+  color: #fff;
+  padding-top: 8px;
+}
+.header-help a {
+  padding: 0 5px;
+}
+.header-help a:link,
+.header-help a:visited {
+   color: #ffffcc;
+}
+
+/* @end   General */
+
+/* @group Backgrounds */
+.page-outline {
+  background: url(../imgs/bg-content-sides-shadow.png) top center no-repeat;
+}
+.header-outline {
+  background: url(../imgs/bg-header-repeat-red.png) top left repeat-x;
+}
+/* @end Backgrounds */
+
+/* @group Header */
+#header {
+  position: relative;
+  z-index: 11;
+}
+/*#name-and-slogan {
+  height: 140px;
+}*/
+#site-court {
+  padding-top: 30px;
+}
+#site-court a {
+  color: #fff;
+  font-family: 'Quattrocento', serif;
+  font-size: 23px;
+  letter-spacing:2px;
+  text-decoration: none;
+  text-transform:uppercase;
+}
+#logo img {
+  position: relative;
+  float: left;
+}
+#site-name {
+  margin-top: -1px;
+}
+#site-name a {
+  color: #fff;
+  font-family: 'Quattrocento', serif;
+  font-size: 37px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+#site-slogan {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-top: -11px;
+}
+#site-slogan a {
+  color: #fff;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+/* Search */
+.search-form {
+  margin-bottom:0;
+}
+#block-search-form {
+  float: right;
+  position: absolute;
+  top: 105px;
+  right: 0;
+  z-index: 200;
+}
+.search-form input {
+ vertical-align: middle;
+}
+#block-search-form label {
+ font-family: georgia, serif;
+ font-size: 14px;
+ font-weight: normal;
+ color: #FFF;
+ display: block;
+ float: left;
+ padding-right: 10px;
+ margin-top:5px
+}
+
+#header .custom-search-box {
+  width:184px
+}
+/* @end   Header */
+
+
+
+/* @group Page */
+#page {
+  position: relative;
+  z-index: 100;
+}
+#page-wrapper {
+  background: url(../imgs/bg-header-stars-red.jpg) top center no-repeat;
+}
+/* @end   Page */
+
+/* @group Main Menu */
+#header ul.menu li {
+  margin: 0;
+  padding: 0;
+}
+
+#block-menu-block-2 {
+  position: relative;
+  z-index: 2;
+}
+
+#header .menu-block-wrapper h2 {
+  display: none;
+}
+#header .menu-block-wrapper ul {
+  background: url(../imgs/bg-nav.png) top left repeat-x;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #FFFFFF;
+  width: 960px;
+}
+#header .menu-block-wrapper li {
+  float: left;
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid #7190bc;
+  position: relative;
+}
+#header .menu-block-wrapper li.last {
+  border-right: none;
+}
+#header .menu-block-wrapper a:link,
+#header .menu-block-wrapper li a:visited {
+  color: #ffffff;
+  font-size: 14px;
+  display: table-cell;
+  padding: 0 10px 0 9px;
+  text-align: center;
+  text-decoration: none;
+  height: 46px;
+  line-height: 16px;
+  vertical-align: middle;
+  width: 86px;
+  position: relative;
+  top: -10%;
+}
+#header .menu-block-wrapper li.last a {
+  padding-right: 10px;
+}
+#header .menu-block-wrapper li a:hover,
+#header .menu-block-wrapper li a:active,
+#header .menu-block-wrapper li a.active,
+#header .menu-block-wrapper li a.active-trail {
+  background: url(../imgs/bg-nav-hover.png) top left repeat-x;
+  position: inherit;
+  top: -2%;
+}
+/*  Dropdown Menu  */
+#header .menu-block-wrapper li ul {
+  background: none;
+  border-bottom: none;
+  position: absolute;
+  z-index: 500;
+  left: -999em;
+  border-bottom: 1px solid #c9c0a6;
+  width: 222px;
+  overflow: hidden;
+}
+#header .menu-block-wrapper li li {
+  float: none;
+  border-right: none;
+  overflow: hidden;
+}
+#header .menu-block-wrapper li li a:link,
+#header .menu-block-wrapper li li a:visited {
+  background: url(../imgs/bg-sub-nav.png) top left repeat-x;
+  display: block;
+  font-size: 13px;
+  font-family: georgia, serif;
+  color: #000000;
+  background-color: #E4DCC5;
+  padding: 8px 10px;
+  text-align: left;
+  height: auto;
+  width: 200px;
+  border-left: 1px solid #c9c0a6;
+  border-right: 1px solid #c9c0a6;
+  position: relative;
+  top: 0;
+}
+
+/* Dropdown Controlers */
+#header .menu-block-wrapper li:hover ul {
+  left: 0;
+}
+/* @end   Main Menu */
+
+/* @group Left Rail */
+#sidebar-first ul {
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+}
+#sidebar-first li {
+  margin: 0;
+  padding: 0;
+  list-style:none;
+}
+#sidebar-first li.last {
+  padding-bottom: 8px;
+
+}
+#sidebar-first li a {
+  font-family: Georgia;
+  font-size: 14px;
+  display: block;
+  padding: 8px 0;
+  padding-left: 10px;
+  border-top: 1px solid #e5ddc3;
+}
+#sidebar-first li a:hover {
+ background-color: #EDE4CE;
+}
+#sidebar-first li a:active,
+#sidebar-first li a.active {
+  background: #e4dcc5;
+  text-decoration: none;
+}
+#sidebar-first li ul {
+  margin-left: 15px;
+}
+#sidebar-first li li a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  padding: 5px 0;
+  padding-left: 10px;
+  border-top: none;
+  line-height: 1.7rem;
+}
+#sidebar-first li li a:hover,
+#sidebar-first li li a:active,
+#sidebar-first li li a.active {
+  background: none;
+  text-decoration: underline;
+}
+/* @end   Left Rail */
+
+/* @group Main Wrapper */
+#main-wrapper {
+  background: url(../imgs/bg-content-gradient-tan.png) #fff top left repeat-x;
+  padding-top: 20px;
+}
+#main {
+  min-height: 550px;
+}
+/* @end   Main Wrapper  */
+
+/* @group Right Rail */
+
+#sidebar-second .block ~ .block {
+  margin-top: 15px;
+}
+/* @end   Right Rail */
+
+
+/* @group Content Top */
+#content-top {
+  position: relative;
+  padding-bottom: 17px;
+  margin-bottom: 17px;
+  border-bottom: 3px solid #e4dcc5;
+}
+#content-top .center-top-column h2 .fp-welcome-title {
+  font-size: 28px;
+  font-family: georgia;
+  color: #00214d;
+  font-style: italic;
+}
+#content-top .center-top-column p {
+  font-size: 18px;
+  font-family: georgia, serif;
+  line-height: 20px;
+  color: #383f49;
+  margin-bottom: 10px;
+}
+#content-top .center-top-column p a {
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+  color: #1765b3;
+}
+#content-top ul.fp-welcome-links {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+#content-top ul.fp-welcome-links li {
+  background: url(../imgs/bg-content-top-fp-link.png) top left repeat-x;
+  list-style-type: none;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+}
+#content-top ul.fp-welcome-links li a {
+  color: #1765b3;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  height: 24px;
+  padding-top: 11px;
+  padding-left: 15px;
+}
+/* @end   Content Top */
+
+
+/* @group Content */
+
+/* Breadcrumb */
+.breadcrumb a.active-trail {
+/*  color: #383f49;*/
+}
+
+/* TODO: This selector below probably shouldn't be here
+.page-node .content .field-items strong {
+  color: #383f49;
+  font-size: 14px;
+  font-weight: bold;
+}
+.page-node .content .field-items h4 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #383f49;
+}
+.page-node .content .field-items ul {
+  margin: 0;
+  padding: 0;
+}
+.page-node .content .field-items li {
+  margin: 5px 0;
+  padding: 0;
+  list-style-type: none;
+}*/
+/* @end   Content */
+
+/* @group Judges Info  */
+/* Content */
+.node-judge .field-type-text-with-summary p {
+  color: #383f49;
+  line-height: 16px;
+}
+.node-judge .field-type-text-with-summary p strong {
+  font-family: arial;
+  font-size: 14px;
+  color: #383f49;
+  font-weight: bold;
+}
+.staff-info-wrap {
+  background: url(../imgs/bg-content-judge-staff-info.png) top left repeat-x #ebf0f3;
+  border: 1px solid #cccccc;
+  padding: 20px;
+  margin-bottom: 35px;
+}
+.staff-info-wrap p {
+  line-height: 17px;
+  color: #383f49;
+}
+.page-node .staff-info-wrap .field-items p strong {
+  font-size: 12px;
+}
+.staff-info-wrap .field-name-field-j-staff-first {
+  float: left;
+  width: 320px;
+}
+.staff-info-wrap .field-name-field-j-staff-second {
+  margin-left: 320px;
+  border-left: 1px solid #78818a;
+  padding-left: 20px;
+}
+/* Tabs */
+div.horizontal-tabs {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+}
+.horizontal-tabs ul.horizontal-tabs-list li {
+  background-color:none;
+  border-right: none;
+}
+.horizontal-tabs ul.horizontal-tabs-list {
+  background:none;
+}
+.horizontal-tabs ul.horizontal-tabs-list li a,
+.horizontal-tabs ul.horizontal-tabs-list li.selected a {
+    padding: 6px 5px 4px 0;
+    height: 15px;
+}
+.horizontal-tabs ul.horizontal-tabs-list {
+  background-color: none;
+  border-right: none;
+  position: relative;
+  z-index: 2;
+}
+.horizontal-tabs ul.horizontal-tabs-list li {
+  background-color:none;
+  background:none;
+}
+.horizontal-tabs fieldset.horizontal-tabs-pane {
+  border-color: #E4DCC5;
+  border-right: 1px solid #E4DCC5;
+  border-style: solid;
+  border-width: 2px 1px 1px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: -5px;
+  position: relative;
+}
+.horizontal-tabs fieldset.horizontal-tabs-pane {
+  padding: 2em 1em;
+}
+.group-judge-tabs li a:link,
+.group-judge-tabs li a:visited {
+  font-family:georgia;
+  font-size:13px;
+  color:#000000;
+}
+.group-judge-tabs li a:link strong,
+.group-judge-tabs li a:visited strong {
+  font-weight:normal;
+}
+.group-judge-tabs li a:link {
+  outline:none;
+}
+.group-judge-tabs .horizontal-tabs ul.horizontal-tabs-list li {
+  background:url(../imgs/bg-content-tabs-sprite.png) no-repeat 0 -50px;
+  padding-left:5px;
+/*  background:#e4dcc5;*/
+	margin-right:4px;
+	min-width:0;
+	padding-bottom: 0;
+}
+.horizontal-tabs ul.horizontal-tabs-list li a {
+    background:url(../imgs/bg-content-tabs-sprite.png) no-repeat right -75px;
+}
+.horizontal-tabs ul.horizontal-tabs-list li.selected {
+    background:url(../imgs/bg-content-tabs-sprite.png) no-repeat 0 0;
+}
+.horizontal-tabs ul.horizontal-tabs-list li.selected a {
+    background:url(../imgs/bg-content-tabs-sprite.png) no-repeat right -25px;
+}
+/* @end   Judges Info */
+/* @group Opinions / Local Rules and Orders / Forms  */
+.file-listing .views-row {
+  margin-bottom: 25px;
+}
+.file-listing .views-field {
+  margin-bottom: 3px;
+}
+.views-label-field-form-cat,
+.views-label-field-form-rev-date {
+  font-weight: bold;
+}
+.file-listing .views-field-title {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.file-listing .views-field-edit-node {
+  margin-top: 10px;
+}
+/* @end   Opinions / Local Rules and Orders */
+
+/* @group FAQs  */
+.view-id-faqs .item-list ul {
+  list-style-type:none;
+}
+.view-id-faqs .item-list ul li {
+  margin-left: 0;
+  padding-left: 23px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+.view-id-faqs .item-list ul.pager li {
+  display: inline;
+}
+.view-faqs .views-field-title {
+  font-family: arial, serif;
+  color: #383f49;
+  font-size: 14px;
+  font-weight: bold;
+}
+.views-field-title.faq-js-active {
+  background: url(../imgs/list-btn-faq-open-close.png) no-repeat;
+  display: block;
+  margin-left: -23px;
+  padding-left: 23px;
+  cursor: pointer;
+  line-height: 1;
+}
+.views-field-title.faq-js-active.faq-open {
+ background-position: 0 -87px;
+}
+.views-field-field-faq-answer {
+  font-family: arial;
+  color: #383f49;
+  font-weight: normal;
+  font-size: 12px;
+}
+.views-field-field-faq-answer .field-content {
+  margin: 13px 0;
+}
+/* @end  FAQs  */
+
+/* @group News */
+
+.news-listing-page .views-row {
+  padding: 0 0 15px 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #cccccc;
+}
+.news-listing-page .views-row p {
+  margin: 0px;
+}
+
+.view-news-announcements .views-field-field-news-date {
+  font-weight: bold;
+  font-size: 11px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.view-news-announcements .views-row .views-field-title {
+  font-weight: normal;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+/* Front Page - Sub Left Column */
+.block #left-sub-column .views-row .views-field-title {
+  margin-bottom: 10px;
+}
+/* Front Page - Sub Right Column */
+.fp-news-feed .views-row {
+  border-bottom: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+.fp-news-feed .views-row .views-field-field-news-date {
+  font-weight: normal;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+.fp-news-feed .views-row .views-field-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+/* @end   News */
+
+/* @group Footer */
+#footer {
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top:1px solid #cccccc;
+}
+#footer #block-block-1,
+#footer #block-nodeblock-nb-footer-coptright {
+  float:left;
+}
+#footer #block-block-2,
+#footer #block-nodeblock-nb-footer-quick-links {
+  float: right;
+  margin-top: 0px;
+}
+#footer #block-block-2 a,
+#footer #block-nodeblock-nb-footer-quick-links a {
+  padding: 0 5px;
+}
+#footer #block-block-2 a.ql-first,
+#footer #block-nodeblock-nb-footer-quick-links a.ql-first {
+  padding-left: 0;
+}
+
+/* @end   Footer */
+
+
+/* @group Text Sizes - Based on Resizer */
+
+/* Medium */
+body.lgFont {
+  font-size: 14px;
+}
+.lfFont #sit-name a {
+	line-height: 0px;
+}
+.lgFont  #content {
+}
+.lgFont #header .menu-block-wrapper li li a:link,
+.lgFont #header .menu-block-wrapper li li a:visited {
+  font-size: 15px;
+}
+.lgFont #sidebar-first li a {
+  display: block;
+  font-size: 16px;
+}
+.lgFont #sidebar-first li li a {
+  font-size: 14px;;
+}
+.lgFont h1#page-title {
+  font-size: 30px;
+}
+.lgFont .page-node .content .field-items h2 {
+  font-size: 30px;
+}
+.lgFont .page-node .content .field-items p strong {
+  font-size: 16px;
+}
+.lgFont .page-node .content .field-items h4 {
+  font-size: 16px;
+  line-height:;
+}
+/* Large */
+body.xlFont {
+  font-size: 16px;
+}
+.xlFont #site-name a {
+	line-height: 0px;
+}
+.xlFont #content {
+  line-height:22px;
+}
+.xlFont #header .menu-block-wrapper li li a:link,
+.xlFont #header .menu-block-wrapper li li a:visited {
+  font-size: 17px;
+}
+.xlFont  #sidebar-first li a {
+  display: block;
+  font-size: 20px;
+  line-height: 24px;
+}
+.xlFont  #sidebar-first li ul li a {
+  font-size: 18px;
+  line-height: 20px;
+}
+.xlFont h1#page-title {
+  font-size: 32px;
+}
+.xlFont .page-node .content .field-items h2 {
+  font-size: 32px;
+}
+.xlFont .page-node .content .field-items p strong {
+  font-size: 18px;
+}
+.xlFont .page-node .content .field-items h4 {
+  font-size: 18px;
+}
+/* @end   Text Sizes - Based on Resize */
+
+/* @group  Block Themes */
+.blocktheme-border_white,
+.blocktheme-gradient {
+  border: solid 1px #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.blocktheme-border_white {
+  background-color: #fff;
+}
+/* TODO: Make the image that this is referencing more generically named */
+.blocktheme-gradient {
+  background: url(../imgs/bg-content-judge-staff-info.png) top left repeat-x #ebf0f3;
+}
+/* @end   Block Themes */
+
+
+/* @group Staff Directory */
+.node-court {
+  background: #FFF;
+  border-top: 3px solid #e4dcc5;
+  border-left: 1px solid #e4dcc5;
+  border-right: 1px solid #e4dcc5;
+  border-bottom: 1px solid #e4dcc5;
+  padding: 20px 25px;
+  position: relative;
+  z-index: 2;
+  margin-top: -3px;
+}
+.court-address-wrap {
+  background: url(../imgs/bg-content-judge-staff-info.png) top left repeat-x #ebf0f3;
+  border: 1px solid #cccccc;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+  width: 348px;
+  margin-top: 20px;
+}
+.court-address-wrap p {
+  line-height: 17px;
+  color: #383f49;
+}
+.court-address-wrap .staff-info-wrap .field-items p strong {
+  font-size: 12px;
+}
+.court-address-wrap .field-name-field-court-st-add {
+  float: left;
+  width: 154px;
+}
+.court-address-wrap .field-name-field-court-mail-add {
+  margin-left: 174px;
+}
+.node-court table {
+  border-collapse: separate;
+}
+/* Courts - Tabs */
+.view-display-id-court_tabs_view ul {
+  position: relative;
+  z-index: 10;
+  clear: both;
+}
+.view-display-id-court_tabs_view ul li {
+  background: url("../imgs/bg-content-tabs-sprite.png") no-repeat scroll 0 -50px;
+  margin-right: 4px;
+  padding-left: 1px;
+  margin-left: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  float: left;
+}
+.view-display-id-court_tabs_view ul li a {
+  background: url("../imgs/bg-content-tabs-sprite.png") no-repeat scroll right -75px;
+  height: 15px;
+  padding: 6px 10px 4px 10px;
+  display: block;
+}
+.view-display-id-court_tabs_view ul li a:link,
+.view-display-id-court_tabs_view ul li a:visited {
+  font-size: 13px;
+  font-weight: normal;
+  font-family: georgia;
+  color: #000;
+}
+.staff-directory-landing .view-display-id-court_tabs_view ul li.views-row-first,
+.view-display-id-court_tabs_view ul li div.active {
+  background: url("../imgs/bg-content-tabs-sprite.png") no-repeat 0 0;
+}
+.staff-directory-landing .view-display-id-court_tabs_view ul li.views-row-first a,
+.view-display-id-court_tabs_view ul li div.active a.active {
+  background: url("../imgs/bg-content-tabs-sprite.png") no-repeat right -25px;
+}
+
+#block-views-staff-listing-block-1 .views-field-title,
+#block-views-staff-directory-home-court-list .views-field-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* @end  Staff Directory  */
+
+/* @group Forms */
+
+.node-form .field {
+ margin-bottom: 10px;
+}
+
+
+/* @end */
+
+
+/* @group  Front Page */
+.front #center-sub-column ul {
+  padding: 0;
+  margin: 0;
+}
+.front #center-sub-column ul li {
+  margin: 5px 0 5px 20px;
+}
+.front .right-top-column img {
+  float: right;
+  border: 4px solid #e4dcc5;
+}
+#sidebar-second div.block-us-courts-buttons, div.block-us-courts-buttons {
+  margin-bottom: 10px;
+}
+
+#sidebar-second div.block-nodeblock, div.block-nodeblock  {
+  margin-bottom: 10px;
+}
+
+/* @end    Font Page */
+
+/* @group  Checklist */
+.page-checklist .view-checklist .view-header {
+  background: url("../imgs/img-sprite-checklist.png") no-repeat 0 -173px;
+  font-family: georgia;
+  font-size: 28px;
+  line-height: 28px;
+  color: #00214d;
+  margin-left: 15px;
+  margin-bottom: 0;
+  padding-left: 60px;
+}
+.page-checklist .view-checklist .view-header p {
+  margin-bottom: 0;
+  width: 392px;
+}
+.page-checklist .view-checklist .views-row {
+  background: url("../imgs/img-sprite-checklist.png") no-repeat 0 17px;
+  padding: 20px 0;
+  padding-left:31px;
+  margin-left: 35px;
+  border-bottom: 1px solid #cccccc;
+}
+.page-checklist .view-checklist .views-field-title {
+  color: #1765b3;
+  font-family: arial;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: block;
+}
+.page-checklist .view-checklist .views-field-body p {
+  margin-bottom: 0;
+}
+/* @end    Checklist */
+
+/* @group  Judges Hearing Dates */
+.field-name-field-hd-address {
+  background: #FFF;
+  width: 218px;
+  padding: 10px;
+  margin: 0 0 20px 20px;
+  border: 1px solid #000;
+  float: right;
+}
+.field-name-field-hd-address p {
+  margin: 0;
+}
+.field-type-text-with-summary strong {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+.field-type-text-with-summary  ul {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+.field-type-text-with-summary li {
+  list-style-type: disc;
+  margin-left: -11px;
+}
+.field-name-field-hd-table table {
+  border-top: 1px solid #c8bea2;
+  border-left: 1px solid #c8bea2;
+}
+.field-name-field-hd-table tbody {
+  border: none;
+}
+.field-name-field-hd-table tr th {
+  background: #f1ede2;
+  border-bottom: none;
+  padding: 10px;
+  border-right: 1px solid #c8bea2;
+  border-bottom: 1px solid #c8bea2;
+  vertical-align: top;
+  color: #663300;
+  font-weight: normal;
+}
+.field-name-field-hd-table tr th strong {
+  font-weight: bold;
+  font-size: 13px;
+}
+.field-name-field-hd-table tr td {
+  color: #666666;
+  font-weight: bold;
+  padding: 10px;
+  border-right: 1px solid #c8bea2;
+  border-bottom: 1px solid #c8bea2;
+  vertical-align: top;
+}
+
+/* @end    Judges Hearing Dates */
+
+/* @group OHO SITE ALERTS */
+
+.oho-site-alert-message {
+ background-color: #ffffcc;
+ border: solid 2px #367cc2;
+ padding: 10px;
+ margin-bottom: 10px;
+ clear: both;
+}
+
+.oho-site-alert-message h2 {
+ color: #740901;
+}
+
+.oho-site-alert-message h2 strong {
+ font-weight: normal;
+}
+
+/* @end OHO SITE ALERTS */
+
+
+/* @group USC STOCK */
+
+.usc-pb-info {
+ float: left;
+ margin-right: 10px;
+ width: 150px;
+}
+
+.usc-pb-actions {
+ float: left;
+ width: 97px;
+ text-align: center;
+}
+
+.usc-pb-pacer-logo {
+ margin: 10px 0px 20px 0px;
+ display: inline-block;
+}
+
+
+/* @end USC STOCK */

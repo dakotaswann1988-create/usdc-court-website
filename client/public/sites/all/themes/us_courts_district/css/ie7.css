@@ -1,0 +1,158 @@
+/* IE7 FIXES */
+body {
+background: #674728 url(../imgs/medium-background.jpg) center top repeat-x;
+background-attachment: fixed;
+background-size: cover;
+}
+.front #content-wrapper, .two-sidebars #content-wrapper, .sidebar-second #content-wrapper {
+	background: url(../imgs/content-bg.jpg) 75.9003984063745% 0 repeat-y;
+}
+.front #content, .one-sidebar #content {
+    width: 72%;
+}
+.two-sidebars #content {
+width: 47%;
+}
+#callToActionImage {
+margin-left: 0;
+float: left;
+}
+#middle-top {
+margin-left: 0;
+}
+#middle-top .region-content {
+margin-left: 10px;
+}
+#sidebar-second {
+float: right;
+}
+
+/*search box*/
+#search-box {
+	padding:0;
+	margin:0;
+	position: relative;
+	bottom: 40px;
+}
+#search-box .custom-search-box {
+width: 70%;
+padding-top: 8px;
+height: 30px;
+}
+#search-box .search-form input[type="submit"] {
+    background: #D5A558 url(../imgs/gold-gradient-bg.jpg) top left repeat-x;
+    border: none;
+	color: #fff;
+    height: 41px;
+    margin-left: -5px;
+    vertical-align: middle;
+    width: 60px;
+}
+/* @group Navigation */
+#navigation #block-system-main-menu ul {
+display: block;
+  background: #D5A558 url(../imgs/gold-gradient-bg.jpg) top left repeat-x;
+  width: 100%;
+  overflow: hidden;
+}
+#navigation #block-system-main-menu a:link,
+#navigation #block-system-main-menu li a:visited {
+background: #D5A558 url(../imgs/gold-gradient-bg.jpg) top left repeat-x;
+border-left: 1px solid #785321;
+border-right: none;
+margin-left:0;
+margin-right: 0;
+}
+
+#navigation #block-system-main-menu li.last {
+border-right: 1px solid #785321;}
+/*  Dropdown Menu  */
+#navigation #block-system-main-menu li ul {
+background: #A01E21;
+border-bottom: none;
+position: absolute;
+top: 42px;
+z-index: 5;
+left: -999em;
+width: 216px;
+overflow: hidden;
+padding:0;
+}
+
+#navigation #block-system-main-menu li li {
+float: none;
+border-right: none;
+overflow: hidden;
+border: none;
+display: block;
+padding: 0;
+margin:0;
+}
+#navigation #block-system-main-menu li li a:link,
+#navigation #block-system-main-menu li li a:visited {
+background: #A01E21;
+display: inline-block;
+text-transform:none;
+font-size: 14px; font-size: 1.4rem;
+color: #fff;
+padding: 8px 10px;
+text-align: left;
+width: 200px;
+border:none;
+text-shadow:none;
+border-bottom: 1px solid #d2232a;
+}
+#navigation #block-system-main-menu li li.last a {
+        border: none;
+        }
+
+.flexslider .slides img, .flexslider img, #slideshow {
+ position: relative;
+z-index: -30;
+}
+#sidebar-first {
+z-index: -30;
+}
+/* @end   Navigation */
+
+/* @group  Side Menus */
+#sidebar-first li {
+  list-style-image: none;
+}
+li .active-trail {
+  position: relative;
+  margin-bottom: -1px;
+}
+li a .active-trail {
+  margin-bottom: 0;
+}
+
+/* applying gradient backgrounds to gold gradient items as well as items that need dark gradient bg (i.e. footer) */
+#left-top .menu li {
+margin-left: 0;
+list-style: none;
+list-style-image: none;
+}
+#left-top ul li a {
+	background: #D5A558 url(../imgs/gold-gradient-bg.jpg) top left repeat-x;
+}
+#preface #slideshow, #footer {
+	background: url(../imgs/black-gradient-bg.png) top left repeat;
+}
+
+/* @end    Side Menus */
+.group-judge-tabs .horizontal-tabs ul.horizontal-tabs-list li {
+  padding-left: 3px;
+  margin-right: 2px;
+}
+.horizontal-tabs ul.horizontal-tabs-list li a,
+.horizontal-tabs ul.horizontal-tabs-list li.selected a {
+    padding: 6px 3px 4px 0;
+    height: 15px;
+}
+.horizontal-tabs fieldset.horizontal-tabs-pane {
+  margin-top: -2px; 
+}
+#navigation #block-menu-menu-mobile-menu {
+display: none;
+}

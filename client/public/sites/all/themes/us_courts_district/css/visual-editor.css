@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  color: #383f49;
+  margin: 0;
+  color: #333;
+}
+
+
+h1 {
+  color: #00214d;
+  font-family: georgia, serif;
+  font-size: 28px;
+  font-weight: normal;
+  margin: 27px 0 20px 0;
+  line-height: 29px;
+}
+
+h2 {
+  color: #00214d;
+  font-weight: normal;
+  font-size: 21px;
+  font-family: georgia, serif;
+  line-height: 25px;
+  margin: 0px 0px 10px 0px;
+}
+p {
+  margin-top: 0px;
+}
+a:link, a:visited {
+  color: #1765b3;
+  text-decoration: none;
+}
+a:hover {
+  color: #002a66;
+  text-decoration: underline;
+}

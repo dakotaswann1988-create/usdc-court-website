@@ -1,0 +1,13 @@
+/* General
+---------------------------- */
+
+a img { border: 0px }
+
+
+/* Drupal Overrides
+---------------------------- */
+
+.field-type-taxonomy-term-reference .field-item {
+ display: inline-block;
+ margin-right: 10px;
+}

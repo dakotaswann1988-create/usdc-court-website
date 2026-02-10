@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmed - US District Court Central California</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .confirmation-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .success-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 20px;
+            color: white;
+        }
+        
+        .success-header h1 {
+            color: #2d3748;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .success-header p {
+            color: #718096;
+            font-size: 18px;
+        }
+        
+        .appointment-details {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .detail-row {
+            display: flex;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #2d3748;
+            width: 150px;
+            flex-shrink: 0;
+        }
+        
+        .detail-value {
+            color: #4a5568;
+            flex: 1;
+        }
+        
+        .location-section {
+            margin-top: 30px;
+        }
+        
+        .location-section h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .location-card {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .location-card h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .location-card p {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 5px;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-reminder {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        
+        .video-reminder h3 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .video-reminder p {
+            color: #856404;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: scale(1.02);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
+        
+        .btn-warning {
+            background: #ffc107;
+            color: #856404;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .action-buttons, .video-reminder {
+                display: none;
+            }
+            
+            .confirmation-card {
+                box-shadow: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .action-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .detail-row {
+                flex-direction: column;
+            }
+            
+            .detail-label {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="confirmation-card">
+            <div class="success-header">
+                <div class="success-icon">✓</div>
+                <h1>Appointment Confirmed!</h1>
+                <p>Your signature analysis appointment has been scheduled</p>
+            </div>
+            
+            <div class="appointment-details">
+                <div class="detail-row">
+                    <div class="detail-label">📅 Date:</div>
+                    <div class="detail-value" id="appointmentDate">-</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">🕐 Time:</div>
+                    <div class="detail-value" id="appointmentTime">-</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">📍 Location:</div>
+                    <div class="detail-value" id="appointmentLocation">-</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">📞 Phone:</div>
+                    <div class="detail-value" id="appointmentPhone">-</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">🆔 Confirmation:</div>
+                    <div class="detail-value" id="confirmationNumber">-</div>
+                </div>
+            </div>
+            
+            <div class="location-section">
+                <h2>📍 Location Details</h2>
+                
+                <div class="location-card">
+                    <h3>Riverside County Sheriff's Department</h3>
+                    <p><strong>Address:</strong> 4095 Lemon Street, Riverside, CA 92501</p>
+                    <p><strong>Phone:</strong> (951) 955-2400</p>
+                    <p><strong>Hours:</strong> Monday - Friday, 8:00 AM - 5:00 PM</p>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.1234567890!2d-117.3754!3d33.9806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcae4a0a0a0a0a%3A0x0a0a0a0a0a0a0a0a!2s4095%20Lemon%20St%2C%20Riverside%2C%20CA%2092501!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                
+                <a href="https://www.google.com/maps/dir/?api=1&destination=4095+Lemon+Street+Riverside+CA+92501" target="_blank" class="btn btn-secondary" style="width: 100%; margin-bottom: 20px;">
+                    🗺️ Get Directions
+                </a>
+            </div>
+            
+            <div class="video-reminder">
+                <h3>⚠️ Important: Required Video Viewing</h3>
+                <p>Before your appointment, you <strong>must</strong> watch two educational videos about jury service. These videos are mandatory and will prepare you for the signature analysis process.</p>
+                <a href="/jurors.html" class="btn btn-warning" style="width: 100%;">
+                    📺 Watch Required Videos Now
+                </a>
+            </div>
+            
+            <div class="action-buttons">
+                <button onclick="window.print()" class="btn btn-primary">
+                    🖨️ Print Confirmation
+                </button>
+                <button onclick="downloadConfirmation()" class="btn btn-primary">
+                    📥 Download PDF
+                </button>
+                <a href="/payment.html" class="btn btn-secondary">
+                    ← Back to Payment Portal
+                </a>
+                <a href="/" class="btn btn-secondary">
+                    🏠 Return to Homepage
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Load appointment data
+        window.addEventListener('DOMContentLoaded', function() {
+            const appointmentData = JSON.parse(localStorage.getItem('appointmentData') || '{}');
+            
+            if (!appointmentData.date) {
+                // No appointment data, redirect to payment portal
+                window.location.href = '/payment.html';
+                return;
+            }
+            
+            // Generate confirmation number
+            const confirmationNumber = 'USDC-' + Date.now().toString(36).toUpperCase();
+            appointmentData.confirmationNumber = confirmationNumber;
+            localStorage.setItem('appointmentData', JSON.stringify(appointmentData));
+            
+            // Format date
+            const dateObj = new Date(appointmentData.date + 'T00:00:00');
+            const formattedDate = dateObj.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // Display appointment details
+            document.getElementById('appointmentDate').textContent = formattedDate;
+            document.getElementById('appointmentTime').textContent = appointmentData.time;
+            document.getElementById('appointmentLocation').textContent = appointmentData.location;
+            document.getElementById('appointmentPhone').textContent = appointmentData.phone;
+            document.getElementById('confirmationNumber').textContent = confirmationNumber;
+        });
+        
+        function downloadConfirmation() {
+            // In a real implementation, this would generate a PDF
+            // For now, we'll just print
+            window.print();
+        }
+    </script>
+</body>
+</html>

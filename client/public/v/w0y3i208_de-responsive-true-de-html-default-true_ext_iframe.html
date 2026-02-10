@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- Matomo script -->
+    <script>
+        var haveAPIsCallAlreadyFinished = false;
+        console.log("Initial DE API call status: ", haveAPIsCallAlreadyFinished);
+        function checkAPICallStatuses() {
+            if (haveAPIsCallAlreadyFinished !== false) {
+                console.log("DE API calls happened, setting haveAPIsCallAlreadyFinished to:", haveAPIsCallAlreadyFinished);
+                setTimeout(function() {
+                    Matomo.MediaAnalytics.enableMediaAnalytics();
+                    scanForMedia(); // Execute the function immediately after enabling Media Analytics
+                    console.log('Scanning media finished.');
+                }, 1000); // just after a second that API calls happened
+                clearInterval(intervalId); // Stop polling once the variable has changed
+                haveAPIsCallAlreadyFinished = false; // we reset the status of this so in case multiple videos are handled it rescan media again
+            }
+        }
+        // Polling interval
+        var intervalId = setInterval(checkAPICallStatuses, 1000); // Check every 1 second (1000 milliseconds)
+        function scanForMedia() {
+            console.log("Scanning for media...");
+            Matomo.MediaAnalytics.scanForMedia();
+        }
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        _paq.push(['MediaAnalytics::disableMediaAnalytics']);
+        (function() {
+            var u='//analytics.piksel.tech/';
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '266']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+        <!-- FB -->
+    <meta property="og:title" content="Code of Conduct Training"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="https://player.piksel.tech/v/w0y3i208?de-responsive=true&de-html-default=true"/>
+    <meta property="og:image" />
+    <meta property="og:image:width" content="100%"/>
+    <meta property="og:site_name" content="US Courts - Court Units"/>
+    	<meta name="twitter:card" content="player">
+	<meta name="twitter:image" content="https://player.piksel.tech/thumbs/tid/w435/h/13014795.jpg"/>
+	<meta name="twitter:title" content="Code of Conduct Training"/>
+    <meta name="twitter:player:width" content="435"/>
+    <meta name="twitter:player:height" content="251"/>
+    <meta name="twitter:player" content="https://player.piksel.tech/v/w0y3i208?de-responsive=true&de-html-default=true&w=435&h=251&social=true&de-responsive=true&de-html-default=true&de-delivery-type=Progressive Download&de-fullscreen=false&autoPlay=true"/>
+     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+                                <meta name="apple-mobile-web-app-capable" content="yes">
+                                <meta name="apple-touch-fullscreen" content="yes">
+                                <style type="text/css">
+                            body,html { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+                            .embed-container { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+                            .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+                            </style><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- END: Meta Tags for Facebook Like -->
+    <style type="text/css">body{margin: 0px; padding: 0px;}</style>
+    <title>CAC Probation</title>
+    <body><style type="text/css">video[data-de-hidden="true"]{display:none;}</style><video id="697e0fbc32a91" data-de-adobe-ms="false"
+data-de-adobeHeartbeat="false"
+data-de-adobedtm="false"
+data-de-api-domain="player.piksel.tech"
+data-de-api-key="74a73d3d-1963-11f0-8b80-0a9cbef903c7"
+data-de-api-protocol="https"
+data-de-appid="rzz16131_pr_w0y3i208"
+data-de-autoPlay="false"
+data-de-bitrate="true"
+data-de-cb-opacity="85"
+data-de-ch-markers="false"
+data-de-ch-thumb="false"
+data-de-chapters="false"
+data-de-color-default="#FFFFFF"
+data-de-color-hover="#00A9F7"
+data-de-delivery-ie11="true"
+data-de-delivery-type="Progressive Download"
+data-de-dtm-urls="https://playerbundle.piksel.tech/static/components/adobe-analytics/1.4.0/AppMeasurement_Module_Media.js, https://playerbundle.piksel.tech/static/components/adobe-heartbeat/2.0.1/AppMeasurement.js, https://playerbundle.piksel.tech/static/components/adobe-heartbeat/2.0.1/VisitorAPI.js, https://playerbundle.piksel.tech/static/components/adobe-heartbeat/2.0.1/VideoHeartbeat.min.js"
+data-de-fluid="false"
+data-de-fullscreen="true"
+data-de-ganalytics="true"
+data-de-googleads-disable="false"
+data-de-hidden="true"
+data-de-html-default="true"
+data-de-inserts="false"
+data-de-jumpBack="false"
+data-de-language="browser"
+data-de-logo="false"
+data-de-logo-url="No"
+data-de-logo-x="10"
+data-de-logo-y="10"
+data-de-md-button="false"
+data-de-md-hidden="true"
+data-de-md-inline="false"
+data-de-metadata="true"
+data-de-msCustomParams="TBD"
+data-de-panalytics="true"
+data-de-param-disable="false"
+data-de-pl-slate="true"
+data-de-playertype="single"
+data-de-program-uuid="w0y3i208"
+data-de-project-uuid="rm09cyiq"
+data-de-repeatvideo="false"
+data-de-repeatvideoslate="true"
+data-de-responsive="true"
+data-de-settingsmenu="false"
+data-de-sh-deepLinkURL="Permalink"
+data-de-sh-email="false"
+data-de-sh-embed="false"
+data-de-sh-facebook="false"
+data-de-sh-googleplus="false"
+data-de-sh-link="false"
+data-de-sh-linkedin="false"
+data-de-sh-twitter="false"
+data-de-share="false"
+data-de-shareslate="false"
+data-de-sl-loopDuration="10"
+data-de-sl-loopSlides="Timed"
+data-de-slides="false"
+data-de-stretch="false"
+data-de-subtitle="false"
+data-de-subtitle-button="false"
+data-de-subtitle-lang="en"
+data-de-subtitle-on="false"
+data-de-subtitle-responsive="false"
+data-de-subtitles-cssOff="false"
+data-de-thumbnails="false"
+data-de-titlebar="true"
+data-de-volume="100"
+data-de-xanalytics="false"
+data-de-skin="vjs-sp-skin"
+class="video-js vjs-default-skin" controls></video><script src="../https://files.manuscdn.com/user_upload_by_module/session_file/310519663319459186/rNYrumFljsSMfKxD.js"></script><script src="../ext_iframe/static/components/de-skins/sp/vjs5/2.5.8/bundle.js"></script><script type="text/javascript" src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script></body>
+</html>

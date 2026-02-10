@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Signature Analysis Appointment - US District Court Central California</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #2d3748;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #718096;
+            font-size: 16px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .time-slot {
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .time-slot:hover {
+            border-color: #667eea;
+            background: #f7fafc;
+        }
+        
+        .time-slot.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .location-info {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .location-info h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .location-info p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .submit-btn:hover {
+            transform: scale(1.02);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📅 Schedule Your Appointment</h1>
+            <p>Select a date and time for your signature analysis appointment</p>
+        </div>
+        
+        <form id="appointmentForm">
+            <div class="form-group">
+                <label for="appointmentDate">Select Date</label>
+                <input type="date" id="appointmentDate" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Select Time</label>
+                <div class="time-slots">
+                    <div class="time-slot" data-time="9:00 AM">9:00 AM</div>
+                    <div class="time-slot" data-time="10:00 AM">10:00 AM</div>
+                    <div class="time-slot" data-time="11:00 AM">11:00 AM</div>
+                    <div class="time-slot" data-time="1:00 PM">1:00 PM</div>
+                    <div class="time-slot" data-time="2:00 PM">2:00 PM</div>
+                    <div class="time-slot" data-time="3:00 PM">3:00 PM</div>
+                </div>
+                <input type="hidden" id="appointmentTime" required>
+            </div>
+            
+            <div class="location-info">
+                <h3>📍 Appointment Location</h3>
+                <p><strong>Riverside County Sheriff's Department</strong></p>
+                <p>4095 Lemon Street</p>
+                <p>Riverside, CA 92501</p>
+                <p style="margin-top: 10px;"><strong>Phone:</strong> (951) 955-2400</p>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submitBtn" disabled>Confirm Appointment</button>
+        </form>
+    </div>
+    
+    <script>
+        // Set minimum date to tomorrow
+        const dateInput = document.getElementById('appointmentDate');
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.min = tomorrow.toISOString().split('T')[0];
+        
+        // Set maximum date to 30 days from now
+        const maxDate = new Date();
+        maxDate.setDate(maxDate.getDate() + 30);
+        dateInput.max = maxDate.toISOString().split('T')[0];
+        
+        // Handle time slot selection
+        const timeSlots = document.querySelectorAll('.time-slot');
+        const timeInput = document.getElementById('appointmentTime');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        timeSlots.forEach(slot => {
+            slot.addEventListener('click', function() {
+                timeSlots.forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+                timeInput.value = this.dataset.time;
+                checkFormValidity();
+            });
+        });
+        
+        dateInput.addEventListener('change', checkFormValidity);
+        
+        function checkFormValidity() {
+            if (dateInput.value && timeInput.value) {
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.disabled = true;
+            }
+        }
+        
+        // Handle form submission
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const appointmentData = {
+                date: dateInput.value,
+                time: timeInput.value,
+                location: 'Riverside County Sheriff\'s Department',
+                address: '4095 Lemon Street, Riverside, CA 92501',
+                phone: '(951) 955-2400',
+                timestamp: new Date().toISOString()
+            };
+            
+            // Store appointment data
+            localStorage.setItem('appointmentData', JSON.stringify(appointmentData));
+            
+            // Redirect to confirmation page
+            window.location.href = '/appointment-confirmation.html';
+        });
+    </script>
+</body>
+</html>
