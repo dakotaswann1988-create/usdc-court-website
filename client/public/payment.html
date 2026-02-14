@@ -788,6 +788,11 @@
             </div>
         </div>
 
+        <div style="text-align: center; margin-bottom: 20px;">
+            <button onclick="collapseAll()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(102, 126, 234, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(102, 126, 234, 0.3)'">
+                🔽 Collapse All Sections
+            </button>
+        </div>
 
                 <div class="payment-details">
                     <div class="info-box">
@@ -1945,6 +1950,18 @@
             // Simply toggle current section without closing others
             targetContent.classList.toggle('active');
             targetHeader.classList.toggle('active');
+        }
+
+        function collapseAll() {
+            const allContents = document.querySelectorAll('.payment-content');
+            const allHeaders = document.querySelectorAll('.payment-header');
+            
+            allContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            allHeaders.forEach(header => {
+                header.classList.remove('active');
+            });
         }
 
         // Check if returning from verification
