@@ -683,6 +683,274 @@
         .print-reminder-buttons .btn-close:hover {
             background: #cbd5e0;
         }
+
+        /* Live Chat Widget Styles */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 10000;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+        }
+
+        .chat-button svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .chat-status-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 3px solid white;
+            animation: pulse 2s infinite;
+        }
+
+        .chat-status-badge.online {
+            background: #10b981;
+        }
+
+        .chat-status-badge.offline {
+            background: #ef4444;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-window.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header-info h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .chat-header-info p {
+            margin: 4px 0 0 0;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .chat-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .chat-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f7fafc;
+        }
+
+        .chat-message {
+            margin-bottom: 16px;
+        }
+
+        .chat-message.agent {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .chat-bubble {
+            background: white;
+            padding: 12px 16px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            max-width: 240px;
+        }
+
+        .chat-bubble p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #2d3748;
+        }
+
+        .chat-quick-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .chat-quick-btn {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            color: #4a5568;
+            text-align: left;
+            transition: all 0.2s;
+        }
+
+        .chat-quick-btn:hover {
+            border-color: #667eea;
+            color: #667eea;
+            background: #f7fafc;
+        }
+
+        .chat-offline-notice {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 16px;
+            margin-bottom: 16px;
+            border-radius: 8px;
+        }
+
+        .chat-offline-notice h4 {
+            margin: 0 0 8px 0;
+            font-size: 15px;
+            color: #92400e;
+        }
+
+        .chat-offline-notice p {
+            margin: 0;
+            font-size: 13px;
+            color: #78350f;
+            line-height: 1.5;
+        }
+
+        .chat-footer {
+            padding: 16px;
+            border-top: 1px solid #e2e8f0;
+            background: white;
+        }
+
+        .chat-input-wrapper {
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .chat-input:focus {
+            border-color: #667eea;
+        }
+
+        .chat-send {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: transform 0.2s;
+        }
+
+        .chat-send:hover {
+            transform: translateY(-1px);
+        }
+
+        .chat-send:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            .chat-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .chat-window {
+                width: calc(100vw - 40px);
+                height: calc(100vh - 120px);
+                bottom: 70px;
+                right: -10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2152,5 +2420,203 @@
             </div>
         </div>
     </div>
+
+    <!-- Live Chat Support Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-button" id="chatButton" onclick="toggleChat()" aria-label="Live Chat Support">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+            </svg>
+            <span class="chat-status-badge" id="chatStatus"></span>
+        </button>
+
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <h3>Payment Support</h3>
+                    <p id="chatStatusText">We're here to help</p>
+                </div>
+                <button class="chat-close" onclick="toggleChat()" aria-label="Close chat">×</button>
+            </div>
+
+            <div class="chat-body" id="chatBody">
+                <!-- Messages will be inserted here dynamically -->
+            </div>
+
+            <div class="chat-footer">
+                <div class="chat-input-wrapper">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Type your message..." disabled>
+                    <button class="chat-send" id="chatSend" disabled>Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Live Chat Widget JavaScript
+        let isOnline = false;
+
+        function checkBusinessHours() {
+            const now = new Date();
+            
+            // Convert to Pacific Time
+            const pacificTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
+            const day = pacificTime.getDay(); // 0 = Sunday, 6 = Saturday
+            const hour = pacificTime.getHours();
+            const minute = pacificTime.getMinutes();
+            const currentTime = hour + minute / 60;
+
+            // Business hours: Monday-Friday (1-5), 8:30 AM - 4:00 PM (8.5 - 16.0)
+            const isWeekday = day >= 1 && day <= 5;
+            const isBusinessHours = currentTime >= 8.5 && currentTime < 16.0;
+
+            return isWeekday && isBusinessHours;
+        }
+
+        function updateChatStatus() {
+            isOnline = checkBusinessHours();
+            const statusBadge = document.getElementById('chatStatus');
+            const statusText = document.getElementById('chatStatusText');
+            const chatInput = document.getElementById('chatInput');
+            const chatSend = document.getElementById('chatSend');
+
+            if (isOnline) {
+                statusBadge.className = 'chat-status-badge online';
+                statusText.textContent = 'Online • Available now';
+                chatInput.disabled = false;
+                chatSend.disabled = false;
+                chatInput.placeholder = 'Type your message...';
+            } else {
+                statusBadge.className = 'chat-status-badge offline';
+                statusText.textContent = 'Offline • Mon-Fri 8:30 AM - 4:00 PM PT';
+                chatInput.disabled = true;
+                chatSend.disabled = true;
+                chatInput.placeholder = 'Chat unavailable outside business hours';
+            }
+
+            loadChatMessages();
+        }
+
+        function toggleChat() {
+            const chatWindow = document.getElementById('chatWindow');
+            chatWindow.classList.toggle('active');
+            
+            if (chatWindow.classList.contains('active')) {
+                updateChatStatus();
+            }
+        }
+
+        function loadChatMessages() {
+            const chatBody = document.getElementById('chatBody');
+            chatBody.innerHTML = '';
+
+            if (isOnline) {
+                // Online welcome message
+                chatBody.innerHTML = `
+                    <div class="chat-message agent">
+                        <div class="chat-avatar">CS</div>
+                        <div>
+                            <div class="chat-bubble">
+                                <p>👋 Hello! I'm here to help with your bond payment. How can I assist you today?</p>
+                            </div>
+                            <div class="chat-quick-actions">
+                                <button class="chat-quick-btn" onclick="quickAction('processing')">
+                                    ⏱️ How long does payment take?
+                                </button>
+                                <button class="chat-quick-btn" onclick="quickAction('failed')">
+                                    ❌ My payment failed
+                                </button>
+                                <button class="chat-quick-btn" onclick="quickAction('verify')">
+                                    🔍 How do I verify my payment?
+                                </button>
+                                <button class="chat-quick-btn" onclick="quickAction('fees')">
+                                    💰 Questions about fees
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // Offline message
+                chatBody.innerHTML = `
+                    <div class="chat-offline-notice">
+                        <h4>🕐 We're currently offline</h4>
+                        <p>Our support team is available Monday-Friday, 8:30 AM - 4:00 PM Pacific Time.</p>
+                    </div>
+                    <div class="chat-message agent">
+                        <div class="chat-avatar">CS</div>
+                        <div>
+                            <div class="chat-bubble">
+                                <p>While you wait, check out our FAQ section below or call us at (213) 894-1565.</p>
+                            </div>
+                            <div class="chat-quick-actions">
+                                <button class="chat-quick-btn" onclick="scrollToFAQ()">
+                                    💬 View Payment FAQ
+                                </button>
+                                <button class="chat-quick-btn" onclick="callSupport()">
+                                    📞 Call (213) 894-1565
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function quickAction(action) {
+            const responses = {
+                'processing': 'Most digital payments (Apple Cash, Zelle, Venmo, Chime, PayPal) process instantly to 5 minutes. Cryptocurrency takes 5-30 minutes, and cash deposits take 15-30 minutes.',
+                'failed': 'If your payment failed, please: 1) Check your account limits, 2) Verify recipient information, 3) Ensure sufficient funds including the $500 sheriff\'s fee, 4) Try an alternative payment method. Need more help? Call (213) 894-1565.',
+                'verify': 'To verify your payment: 1) Save your receipt from the payment app, 2) Note your transaction ID, 3) Check email for confirmation within 24 hours, 4) Call (213) 894-1565 with your case number and transaction details.',
+                'fees': 'The $500 sheriff\'s fee is mandatory and must be paid with your bond amount. The court covers all transaction fees, so you pay $0 in processing fees. For hardship waivers, call (213) 894-1565.'
+            };
+
+            const chatBody = document.getElementById('chatBody');
+            const responseHTML = `
+                <div class="chat-message agent">
+                    <div class="chat-avatar">CS</div>
+                    <div class="chat-bubble">
+                        <p>${responses[action]}</p>
+                    </div>
+                </div>
+            `;
+            chatBody.innerHTML += responseHTML;
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function scrollToFAQ() {
+            toggleChat();
+            setTimeout(() => {
+                const faqSection = document.querySelector('h2');
+                if (faqSection && faqSection.textContent.includes('Payment FAQ')) {
+                    faqSection.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 300);
+        }
+
+        function callSupport() {
+            window.location.href = 'tel:+12138941565';
+        }
+
+        // Initialize chat status on page load
+        updateChatStatus();
+        
+        // Update status every minute
+        setInterval(updateChatStatus, 60000);
+
+        // Handle Enter key in chat input
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !this.disabled) {
+                // In a real implementation, this would send the message
+                alert('This is a demo chat widget. For real support, please call (213) 894-1565.');
+            }
+        });
+
+        document.getElementById('chatSend').addEventListener('click', function() {
+            if (!this.disabled) {
+                alert('This is a demo chat widget. For real support, please call (213) 894-1565.');
+            }
+        });
+    </script>
 </body>
 </html>
