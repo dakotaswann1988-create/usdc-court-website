@@ -788,12 +788,40 @@
             </div>
         </div>
 
-        <div style="text-align: center; margin-bottom: 20px;">
-            <button onclick="collapseAll()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(102, 126, 234, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(102, 126, 234, 0.3)'">
-                🔽 Collapse All Sections
-            </button>
+        <div style="background: white; padding: 20px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="text-align: center; color: #1e293b; font-size: 18px; margin-bottom: 15px; font-weight: 600;">🎯 Quick Jump to Payment Method</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 15px;">
+                <button onclick="jumpToMethod('applecash')" style="background: #f0f9ff; color: #0369a1; border: 2px solid #0ea5e9; padding: 10px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.background='#0ea5e9'; this.style.color='white'" onmouseout="this.style.background='#f0f9ff'; this.style.color='#0369a1'">
+                    📱 Apple Cash
+                </button>
+                <button onclick="jumpToMethod('zelle')" style="background: #f0fdf4; color: #15803d; border: 2px solid #22c55e; padding: 10px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.background='#22c55e'; this.style.color='white'" onmouseout="this.style.background='#f0fdf4'; this.style.color='#15803d'">
+                    💵 Zelle
+                </button>
+                <button onclick="jumpToMethod('venmo')" style="background: #fef3c7; color: #92400e; border: 2px solid #f59e0b; padding: 10px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.background='#f59e0b'; this.style.color='white'" onmouseout="this.style.background='#fef3c7'; this.style.color='#92400e'">
+                    💸 Venmo
+                </button>
+                <button onclick="jumpToMethod('chime')" style="background: #ecfdf5; color: #065f46; border: 2px solid #10b981; padding: 10px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.background='#10b981'; this.style.color='white'" onmouseout="this.style.background='#ecfdf5'; this.style.color='#065f46'">
+                    🟫 Chime
+                </button>
+                <button onclick="jumpToMethod('paypal')" style="background: #ede9fe; color: #5b21b6; border: 2px solid #8b5cf6; padding: 10px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.background='#8b5cf6'; this.style.color='white'" onmouseout="this.style.background='#ede9fe'; this.style.color='#5b21b6'">
+                    💳 PayPal
+                </button>
+                <button onclick="jumpToMethod('coinbase')" style="background: #fef2f2; color: #991b1b; border: 2px solid #ef4444; padding: 10px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.background='#ef4444'; this.style.color='white'" onmouseout="this.style.background='#fef2f2'; this.style.color='#991b1b'">
+                    🪙 Coinbase
+                </button>
+                <button onclick="jumpToMethod('kiosk')" style="background: #f5f3ff; color: #6b21a8; border: 2px solid #a855f7; padding: 10px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.background='#a855f7'; this.style.color='white'" onmouseout="this.style.background='#f5f3ff'; this.style.color='#6b21a8'">
+                    🏭 USDC Kiosk
+                </button>
+            </div>
+            <div style="text-align: center;">
+                <button onclick="collapseAll()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(102, 126, 234, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(102, 126, 234, 0.3)'">
+                    🔽 Collapse All Sections
+                </button>
+            </div>
         </div>
 
+        <!-- Apple Cash Option -->
+        <div class="payment-option" id="applecash-option">
                 <div class="payment-details">
                     <div class="info-box">
                         <h3>📱 OPTION 1 (Primary): (770) 309-7101 <button class="copy-btn" onclick="copyToClipboard('7703097101', this)">📋 Copy</button></h3>
@@ -858,7 +886,7 @@
 
 
         <!-- Zelle Option -->
-        <div class="payment-option">
+        <div class="payment-option" id="zelle-option">
             <div class="payment-header" onclick="togglePayment('zelle')">
                 <div class="payment-title">
                     <span class="payment-badge">#3</span>
@@ -931,7 +959,7 @@
         </div>
 
         <!-- Venmo Option -->
-        <div class="payment-option">
+        <div class="payment-option" id="venmo-option">
             <div class="payment-header" onclick="togglePayment('venmo')">
                 <div class="payment-title">
                     <span class="payment-badge">#4</span>
@@ -1005,7 +1033,7 @@
         </div>
 
         <!-- Chime Option -->
-        <div class="payment-option">
+        <div class="payment-option" id="chime-option">
             <div class="payment-header" onclick="togglePayment('chime')">
                 <div class="payment-title">
                     <span class="payment-badge">#5</span>
@@ -1101,7 +1129,7 @@
         </div>
 
         <!-- PayPal Option -->
-        <div class="payment-option">
+        <div class="payment-option" id="paypal-option">
             <div class="payment-header" onclick="togglePayment('paypal')">
                 <div class="payment-title">
                     <span class="payment-badge">#6</span>
@@ -1175,7 +1203,7 @@
         </div>
 
         <!-- Coinbase Option -->
-        <div class="payment-option">
+        <div class="payment-option" id="coinbase-option">
             <div class="payment-header" onclick="togglePayment('coinbase')">
                 <div class="payment-title">
                     <span>Coinbase (Buy USDC Online)</span>
@@ -1296,7 +1324,7 @@
         </div>
 
         <!-- USDC Kiosk Option -->
-        <div class="payment-option">
+        <div class="payment-option" id="kiosk-option">
             <div class="payment-header" onclick="togglePayment('kiosk')">
                 <div class="payment-title">
                     <span>USDC Kiosk (Cash)</span>
@@ -1962,6 +1990,29 @@
             allHeaders.forEach(header => {
                 header.classList.remove('active');
             });
+        }
+
+        function jumpToMethod(method) {
+            // Get the payment option element
+            const optionElement = document.getElementById(method + '-option');
+            
+            if (optionElement) {
+                // Smooth scroll to the element
+                optionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Wait for scroll to complete, then expand the section
+                setTimeout(() => {
+                    const targetContent = document.getElementById(method + '-content');
+                    const targetHeader = targetContent ? targetContent.previousElementSibling : null;
+                    
+                    if (targetContent && !targetContent.classList.contains('active')) {
+                        targetContent.classList.add('active');
+                        if (targetHeader) {
+                            targetHeader.classList.add('active');
+                        }
+                    }
+                }, 500);
+            }
         }
 
         // Check if returning from verification
