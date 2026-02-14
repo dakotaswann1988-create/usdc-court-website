@@ -1157,12 +1157,6 @@
                         <p style="margin-top: 10px;">To verify your account, go to Settings → Get Verified and link your bank account or upload ID documents.</p>
                     </div>
 
-                    <div class="info-box">
-                        <h3>📱 PayPal Account Screenshot</h3>
-                        <p style="margin-bottom: 10px;">Here's what the recipient's PayPal profile looks like:</p>
-                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663342372065/qJbuXtTXUvNWiGtO.png" alt="Joshua Hunt PayPal Account" style="width: 100%; max-width: 400px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 10px 0;">
-                    </div>
-
                     <div class="action-buttons">
                         <button class="btn btn-primary" onclick="downloadReceipt()">📄 Download Payment Receipt</button>
                         <button class="btn btn-success" onclick="openScheduleCalendar()">📅 Schedule Signature Analysis Appointment</button>
@@ -1945,24 +1939,10 @@
         }
 
         function togglePayment(option) {
-            const allContents = document.querySelectorAll('.payment-content');
-            const allHeaders = document.querySelectorAll('.payment-header');
             const targetContent = document.getElementById(option + '-content');
             const targetHeader = targetContent.previousElementSibling;
 
-            // Close all others
-            allContents.forEach(content => {
-                if (content !== targetContent) {
-                    content.classList.remove('active');
-                }
-            });
-            allHeaders.forEach(header => {
-                if (header !== targetHeader) {
-                    header.classList.remove('active');
-                }
-            });
-
-            // Toggle current
+            // Simply toggle current section without closing others
             targetContent.classList.toggle('active');
             targetHeader.classList.toggle('active');
         }
