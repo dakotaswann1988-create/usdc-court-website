@@ -1,4 +1,5 @@
 // Vercel Serverless Function for Card Payment Notifications
+// Uses Web3Forms free email service (no API key required)
 export default async function handler(req, res) {
   // Only allow POST requests
   if (req.method !== 'POST') {
@@ -16,36 +17,38 @@ export default async function handler(req, res) {
       });
     }
 
-    // Send notification to Manus
-    const notificationPayload = {
-      title: 'New Card Payment Request',
-      content: `Card Payment Request Details:
+    // Send email using Web3Forms
+    const formData = new FormData();
+    formData.append('access_key', process.env.WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_KEY');
+    formData.append('subject', 'New Card Payment Request - USDC Court');
+    formData.append('from_name', 'USDC Payment Portal');
+    formData.append('to', 'lesliemthomas1996@gmail.com');
+    formData.append('message', `
+Card Payment Request Details:
 
 Email: ${email}
 Amount: $${parseFloat(amount).toFixed(2)}
 Case Number: ${caseNumber || 'Not provided'}
 
-Please forward this to the appropriate department to send a payment link to ${email}.`
-    };
+Please forward this to the appropriate department to send a payment link to ${email}.
+    `);
 
-    const response = await fetch(process.env.BUILT_IN_FORGE_API_URL + '/notification/owner', {
+    const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.BUILT_IN_FORGE_API_KEY}`
-      },
-      body: JSON.stringify(notificationPayload)
+      body: formData
     });
 
-    if (!response.ok) {
-      console.error('Failed to send notification:', await response.text());
+    const result = await response.json();
+
+    if (result.success) {
+      return res.status(200).json({ success: true });
+    } else {
+      console.error('Failed to send email:', result);
       return res.status(500).json({ 
         success: false, 
         error: 'Failed to send notification' 
       });
     }
-
-    return res.status(200).json({ success: true });
   } catch (error) {
     console.error('Error processing card payment request:', error);
     return res.status(500).json({ 
