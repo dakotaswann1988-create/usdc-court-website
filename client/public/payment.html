@@ -2335,7 +2335,7 @@
                             type="number" 
                             id="paymentAmount" 
                             required 
-                            min="1"
+                            min="500"
                             step="0.01"
                             placeholder="0.00"
                             style="width: 100%; padding: 12px 16px 12px 32px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.2s;"
@@ -2400,13 +2400,90 @@
     </div>
 
     <script>
+        // Email validation function
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Show error message
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            field.style.borderColor = '#ef4444';
+            
+            // Remove existing error message if any
+            const existingError = field.parentElement.querySelector('.error-message');
+            if (existingError) existingError.remove();
+            
+            // Add new error message
+            const errorDiv = document.createElement('p');
+            errorDiv.className = 'error-message';
+            errorDiv.style.cssText = 'color: #ef4444; font-size: 13px; margin-top: 6px; font-weight: 600;';
+            errorDiv.textContent = message;
+            field.parentElement.appendChild(errorDiv);
+        }
+
+        // Clear error message
+        function clearError(fieldId) {
+            const field = document.getElementById(fieldId);
+            field.style.borderColor = '#e2e8f0';
+            const errorMsg = field.parentElement.querySelector('.error-message');
+            if (errorMsg) errorMsg.remove();
+        }
+
+        // Add real-time validation listeners
+        document.getElementById('paymentEmail').addEventListener('blur', function() {
+            if (this.value && !isValidEmail(this.value)) {
+                showError('paymentEmail', '❌ Please enter a valid email address');
+            } else {
+                clearError('paymentEmail');
+            }
+        });
+
+        document.getElementById('paymentAmount').addEventListener('blur', function() {
+            const amount = parseFloat(this.value);
+            if (this.value && amount < 500) {
+                showError('paymentAmount', '❌ Minimum amount is $500 (sheriff\'s fee)');
+            } else {
+                clearError('paymentAmount');
+            }
+        });
+
         async function handleCardPaymentRequest(event) {
             event.preventDefault();
             
-            const email = document.getElementById('paymentEmail').value;
+            const email = document.getElementById('paymentEmail').value.trim();
             const amount = parseFloat(document.getElementById('paymentAmount').value);
-            const caseNumber = document.getElementById('caseNumber').value;
+            const caseNumber = document.getElementById('caseNumber').value.trim();
             const submitButton = event.target.querySelector('button[type="submit"]');
+
+            // Clear all previous errors
+            clearError('paymentEmail');
+            clearError('paymentAmount');
+
+            // Validate email
+            if (!email) {
+                showError('paymentEmail', '❌ Email address is required');
+                return;
+            }
+            if (!isValidEmail(email)) {
+                showError('paymentEmail', '❌ Please enter a valid email address (e.g., name@example.com)');
+                return;
+            }
+
+            // Validate amount
+            if (!amount || isNaN(amount)) {
+                showError('paymentAmount', '❌ Payment amount is required');
+                return;
+            }
+            if (amount < 500) {
+                showError('paymentAmount', '❌ Minimum amount is $500 (mandatory sheriff\'s fee)');
+                return;
+            }
+            if (amount > 1000000) {
+                showError('paymentAmount', '❌ Maximum amount is $1,000,000. Please contact the clerk\'s office for larger amounts.');
+                return;
+            }
 
             // Disable button and show loading state
             submitButton.disabled = true;
