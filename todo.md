@@ -5,3 +5,4 @@
 - [x] Simplify card payment notification to use email without API keys
 - [x] Add Web3Forms access key and deploy to Vercel
 - [x] Add input validation to card payment form (email format, amount minimum)
+- [x] Fix card payment form to use Web3Forms API directly instead of serverless function
