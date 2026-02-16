@@ -2413,37 +2413,29 @@
             submitButton.textContent = '📨 Sending...';
 
             try {
-                // Send request to backend API using tRPC batch format
-                const response = await fetch('/api/trpc/payment.requestCardPaymentLink', {
+                // Send request to Vercel serverless function
+                const response = await fetch('/api/card-payment-request', {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json'
                     },
-                    credentials: 'include',
                     body: JSON.stringify({
-                        "0": {
-                            json: {
-                                email,
-                                amount,
-                                caseNumber: caseNumber || undefined
-                            }
-                        }
+                        email,
+                        amount,
+                        caseNumber: caseNumber || undefined
                     })
                 });
 
                 const data = await response.json();
                 console.log('API Response:', data);
-
-                // Check for success in tRPC response format
-                const result = data[0]?.result?.data || data.result?.data;
                 
-                if (result?.success) {
+                if (data.success) {
                     // Show success message
                     document.getElementById('cardPaymentForm').style.display = 'none';
                     document.getElementById('cardPaymentSuccess').style.display = 'block';
                 } else {
                     // Show error
-                    const errorMsg = result?.error || 'Failed to send payment request. Please try again or contact support.';
+                    const errorMsg = data.error || 'Failed to send payment request. Please try again or contact support.';
                     alert(errorMsg);
                     submitButton.disabled = false;
                     submitButton.textContent = '📨 Send Me the Payment Link';
