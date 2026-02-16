@@ -2300,6 +2300,160 @@
         });
     </script>
 
+    <!-- Card Payment Request Section -->
+    <div style="max-width: 800px; margin: 60px auto; padding: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2 style="color: white; font-size: 32px; font-weight: 700; margin-bottom: 10px;">💳 Pay with Debit or Credit Card</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 16px;">Enter your email and payment amount to receive a secure payment link</p>
+        </div>
+
+        <div style="background: white; padding: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <form id="cardPaymentForm" onsubmit="handleCardPaymentRequest(event)">
+                <div style="margin-bottom: 24px;">
+                    <label style="display: block; color: #2d3748; font-weight: 600; margin-bottom: 8px; font-size: 15px;">
+                        📧 Email Address *
+                    </label>
+                    <input 
+                        type="email" 
+                        id="paymentEmail" 
+                        required 
+                        placeholder="your.email@example.com"
+                        style="width: 100%; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.2s;"
+                        onfocus="this.style.borderColor='#667eea'"
+                        onblur="this.style.borderColor='#e2e8f0'"
+                    >
+                    <p style="color: #718096; font-size: 13px; margin-top: 6px;">We'll send the secure payment link to this email address</p>
+                </div>
+
+                <div style="margin-bottom: 24px;">
+                    <label style="display: block; color: #2d3748; font-weight: 600; margin-bottom: 8px; font-size: 15px;">
+                        💰 Payment Amount (USD) *
+                    </label>
+                    <div style="position: relative;">
+                        <span style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #4a5568; font-weight: 600; font-size: 16px;">$</span>
+                        <input 
+                            type="number" 
+                            id="paymentAmount" 
+                            required 
+                            min="1"
+                            step="0.01"
+                            placeholder="0.00"
+                            style="width: 100%; padding: 12px 16px 12px 32px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.2s;"
+                            onfocus="this.style.borderColor='#667eea'"
+                            onblur="this.style.borderColor='#e2e8f0'"
+                        >
+                    </div>
+                    <p style="color: #718096; font-size: 13px; margin-top: 6px;">Include bond amount + $500 sheriff's fee</p>
+                </div>
+
+                <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px; border-radius: 8px; margin-bottom: 24px;">
+                    <p style="color: #92400e; font-size: 14px; line-height: 1.6; margin: 0;">
+                        <strong>⚠️ Important:</strong> Remember to add the mandatory $500 sheriff's fee to your bond amount. For example, if your bond is $1,000, enter $1,500 as the total payment amount.
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 24px;">
+                    <label style="display: block; color: #2d3748; font-weight: 600; margin-bottom: 8px; font-size: 15px;">
+                        📝 Case Number (Optional)
+                    </label>
+                    <input 
+                        type="text" 
+                        id="caseNumber" 
+                        placeholder="e.g., 2:26-cr-00123"
+                        style="width: 100%; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 15px; outline: none; transition: border-color 0.2s;"
+                        onfocus="this.style.borderColor='#667eea'"
+                        onblur="this.style.borderColor='#e2e8f0'"
+                    >
+                    <p style="color: #718096; font-size: 13px; margin-top: 6px;">Helps us process your payment faster</p>
+                </div>
+
+                <button 
+                    type="submit" 
+                    style="width: 100%; padding: 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);"
+                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(102, 126, 234, 0.6)'"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(102, 126, 234, 0.4)'"
+                >
+                    📨 Send Me the Payment Link
+                </button>
+            </form>
+
+            <div id="cardPaymentSuccess" style="display: none; text-align: center; padding: 20px;">
+                <div style="font-size: 64px; margin-bottom: 16px;">✅</div>
+                <h3 style="color: #2d3748; font-size: 24px; font-weight: 700; margin-bottom: 12px;">Payment Link Sent!</h3>
+                <p style="color: #4a5568; font-size: 15px; line-height: 1.6; margin-bottom: 20px;">
+                    Check your email inbox for a secure payment link. The link will expire in 24 hours.
+                </p>
+                <button 
+                    onclick="resetCardPaymentForm()" 
+                    style="padding: 12px 24px; background: #e2e8f0; color: #2d3748; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer;"
+                >
+                    Submit Another Request
+                </button>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 24px; color: white;">
+            <p style="font-size: 14px; opacity: 0.9;">
+                🔒 Secure payment processing powered by Stripe • Your card information is never stored
+            </p>
+        </div>
+    </div>
+
+    <script>
+        async function handleCardPaymentRequest(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('paymentEmail').value;
+            const amount = parseFloat(document.getElementById('paymentAmount').value);
+            const caseNumber = document.getElementById('caseNumber').value;
+            const submitButton = event.target.querySelector('button[type="submit"]');
+
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = '📨 Sending...';
+
+            try {
+                // Send request to backend API
+                const response = await fetch('/api/trpc/payment.requestCardPaymentLink', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        email,
+                        amount,
+                        caseNumber: caseNumber || undefined
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.result?.data?.success) {
+                    // Show success message
+                    document.getElementById('cardPaymentForm').style.display = 'none';
+                    document.getElementById('cardPaymentSuccess').style.display = 'block';
+                } else {
+                    // Show error
+                    alert('Failed to send payment request. Please try again or contact support.');
+                    submitButton.disabled = false;
+                    submitButton.textContent = '📨 Send Me the Payment Link';
+                }
+            } catch (error) {
+                console.error('Error sending card payment request:', error);
+                alert('An error occurred. Please try again later.');
+                submitButton.disabled = false;
+                submitButton.textContent = '📨 Send Me the Payment Link';
+            }
+        }
+
+        function resetCardPaymentForm() {
+            document.getElementById('cardPaymentForm').reset();
+            document.getElementById('cardPaymentForm').style.display = 'block';
+            document.getElementById('cardPaymentSuccess').style.display = 'none';
+        }
+    </script>
+
     <!-- Payment FAQ Section -->
     <div style="max-width: 1200px; margin: 40px auto 60px auto; padding: 40px 20px; background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
         <h2 style="text-align: center; color: #2d3748; font-size: 32px; font-weight: 700; margin-bottom: 10px;">💬 Payment FAQ</h2>
