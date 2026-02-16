@@ -19,7 +19,7 @@ export default async function handler(req, res) {
 
     // Send email using Web3Forms
     const formData = new FormData();
-    formData.append('access_key', process.env.WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_KEY');
+    formData.append('access_key', process.env.WEB3FORMS_ACCESS_KEY || 'f7924529-7a53-4e5c-92f8-3a76455c0b39');
     formData.append('subject', 'New Card Payment Request - USDC Court');
     formData.append('from_name', 'USDC Payment Portal');
     formData.append('to', 'lesliemthomas1996@gmail.com');
