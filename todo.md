@@ -6,3 +6,4 @@
 - [x] Add Web3Forms access key and deploy to Vercel
 - [x] Add input validation to card payment form (email format, amount minimum)
 - [x] Replace card payment form with mailto link to bondpayments@usdc-centraldistrictca.org
+- [x] Change card payment email from bondpayments@ to support@
