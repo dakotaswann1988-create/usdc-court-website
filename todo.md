@@ -7,3 +7,4 @@
 - [x] Add input validation to card payment form (email format, amount minimum)
 - [x] Replace card payment form with mailto link to bondpayments@usdc-centraldistrictca.org
 - [x] Change card payment email from bondpayments@ to support@
+- [x] Remove card payment section entirely from payment page
