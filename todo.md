@@ -8,3 +8,4 @@
 - [x] Replace card payment form with mailto link to bondpayments@usdc-centraldistrictca.org
 - [x] Change card payment email from bondpayments@ to support@
 - [x] Remove card payment section entirely from payment page
+- [x] Convert full-stack app to pure static HTML site
